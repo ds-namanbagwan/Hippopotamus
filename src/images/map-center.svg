@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="51" height="68" viewBox="0 0 51 68">
+  <g id="map-center" transform="translate(-605 -1886)">
+    <path id="Icon_awesome-map-marker-alt" data-name="Icon awesome-map-marker-alt" d="M22.879,66.628C3.582,38.653,0,35.781,0,25.5a25.5,25.5,0,0,1,51,0c0,10.281-3.582,13.153-22.879,41.128a3.189,3.189,0,0,1-5.241,0Zm2.621-30.5A10.625,10.625,0,1,0,14.875,25.5,10.625,10.625,0,0,0,25.5,36.125Z" transform="translate(605 1886)" fill="#383838"/>
+    <circle id="Ellipse_1" data-name="Ellipse 1" cx="21" cy="21" r="21" transform="translate(610 1891)" fill="#fff"/>
+    <path id="Icon_awesome-user" data-name="Icon awesome-user" d="M12.33,14.091A7.045,7.045,0,1,0,5.284,7.045,7.045,7.045,0,0,0,12.33,14.091Zm4.932,1.761h-.919a9.582,9.582,0,0,1-8.025,0H7.4A7.4,7.4,0,0,0,0,23.25v2.29a2.643,2.643,0,0,0,2.642,2.642H22.017a2.643,2.643,0,0,0,2.642-2.642V23.25A7.4,7.4,0,0,0,17.261,15.852Z" transform="translate(618.788 1897.909)" fill="#383838"/>
+  </g>
+</svg>

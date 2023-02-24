@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32.4" height="43.197" viewBox="0 0 32.4 43.197">
+  <g id="Group_102" data-name="Group 102" transform="translate(-1106.871 -1030.805)">
+    <path id="Icon_awesome-map-marker-alt" data-name="Icon awesome-map-marker-alt" d="M14.534,42.324C2.275,24.553,0,22.729,0,16.2a16.2,16.2,0,0,1,32.4,0c0,6.531-2.275,8.355-14.534,26.126a2.026,2.026,0,0,1-3.329,0ZM16.2,22.947A6.749,6.749,0,1,0,9.449,16.2,6.749,6.749,0,0,0,16.2,22.947Z" transform="translate(1106.871 1030.805)" fill="#303030"/>
+    <g id="Group_27" data-name="Group 27" transform="translate(154 186.171)">
+      <path id="Path_51" data-name="Path 51" d="M12,0A12,12,0,1,1,0,12,12,12,0,0,1,12,0Z" transform="translate(957 849.829)" fill="#fff"/>
+      <text id="M" transform="translate(961.267 867.509)" fill="#474747" font-size="16" font-family="SofiaProLight, Sofia Pro"><tspan x="0" y="0">M</tspan></text>
+    </g>
+  </g>
+</svg>

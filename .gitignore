@@ -1,0 +1,13 @@
+node_modules/
+sites-rendered-output/
+localData/
+dist/
+prezzorestaurants-site/
+.yext
+.artifact-output
+sites-config/features.json
+*.local
+notes.txt
+.env
+
+.DS_Store

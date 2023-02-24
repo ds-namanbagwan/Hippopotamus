@@ -1,0 +1,9 @@
+This is a beta version of the Yext Command Line Interface
+
+Please upgrade the Yext CLI. Current version: 0.1_288. Top version: 0.1_306.
+
+In order to upgrade, please download the latest version from https://hitchhikers.yext.com/docs/cli/installation/
+
+
+[1;31mERROR: [0munknown command "{\"$id\":\"site-entity\",\"filter\":{\"entityIds\":[\"global-data\"]},\"source\":\"knowledgeGraph\",\"fields\":[\"name\",\"c_canonical\",\"c_meta_title\",\"c_meta_description\",\"c_locatorBannerImage\",\"c_locatorTitleH1\",\"c_locator_description\",\"c_matalan_header_logo\",\"c_header_links\",\"c_footerDescription\",\"c_customer_services\",\"c_about_matalan\",\"c_our_website\",\"c_socialIcons\",\"c_appSectionText\",\"c_app_icon\",\"c_matalan_footer_logo\",\"c_fAQs\",\"c_store_finder\",\"richTextDescription\"],\"localization\":{\"locales\":[\"en_GB\"],\"primary\":false}}" for "yext pages generate-test-data"
+You may ask for help in the community at https://hitchhikers.yext.com/community

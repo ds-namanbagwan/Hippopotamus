@@ -1,0 +1,641 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'futura_ptdemi';
+  src: url('./fonts/ftn65-webfont.woff2') format('woff2'),
+       url('./fonts/ftn65-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'futura_ptbook';
+  src: url('./fonts/ftn45-webfont.woff2') format('woff2'),
+       url('./fonts/ftn45-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@media (min-width: 768px) {
+	html { @apply  text-[80%]}
+}
+
+@media (min-width: 1024px) {
+	html { @apply  text-[85%]}
+}
+
+@media screen and (min-width: 1800px) {
+	html {@apply  text-[100%]	}
+}
+a{ @apply focus:outline-none focus-visible:outline-none}
+body{ @apply font-main-font text-sm md:text-base text-gray}
+h1 {@apply text-4xl font-normal;}
+h2 {  @apply text-2xl font-normal;}
+.centered-container {  @apply mx-auto px-5 md:px-14 max-w-screen-xl;}
+.container-lg{  @apply mx-auto px-5 md:px-14 max-w-[120rem];}
+.container-custom{ @apply max-w-[87.5rem] mx-auto px-4 lg:px-6 xl:px-0}
+.container{ @apply px-4 lg:px-5 max-w-full xl:max-w-screen-xl 2xl:max-w-screen-2xl}
+#root{  @apply flex flex-col min-h-screen}
+.section { @apply mt-8 mb-16;}
+.primary-cta { @apply bg-Dark-red hover:bg-red;}
+.secondary-cta { @apply bg-Dark-red hover:bg-red;}
+.image { @apply rounded-xl drop-shadow-md;}
+.image:hover { transform: scale(1.02);  transition-duration: 0.3s;  cursor: pointer;}
+.social-link { @apply text-black flex gap-x-3  hover:cursor-pointer;}
+.card {  @apply rounded-xl drop-shadow-md;}
+.card:hover {  transform: scale(1.02);  transition-duration: 0.3s;  cursor: pointer;}
+.pagination-conatiner button[disabled]{  @apply hidden  }
+nav[aria-label="Pagination"] button{  @apply rounded-none  border-red}
+nav[aria-label="Pagination"] button:hover, nav[aria-label="Pagination"] button.bg-primary-light{  @apply bg-red text-white}
+nav[aria-label="Pagination"] button:disabled{  @apply cursor-not-allowed text-opacity-60 bg-opacity-60}
+nav .active{ @apply bg-light-red}
+.selectedLabel{@apply block}
+
+/* Header */
+.site-header{   @apply pt-0 lg:pt-6 relative}
+.site-header .header-top{  @apply border-b border-border-light border-opacity-[0.45] text-nav-link}
+.site-header .header-top .logo svg{  @apply w-36 h-auto lg:w-[14.625rem]}
+.site-header .header-top .logo img{  @apply w-36 h-14 lg:h-auto  lg:w-[14.625rem] mx-auto lg:ml-0}
+.site-header .container{  @apply flex flex-row justify-between}
+.site-header .right-menu{ @apply hidden}
+.site-header .right-menu ul{  @apply flex items-center}
+.site-header .right-menu ul li{  @apply border-l-2 border-right-menu-b first:border-l-0}
+.site-header .right-menu ul li{  @apply text-nav-link}
+.site-header .main-nav{  @apply text-[.92857rem] lg:text-sm uppercase text-black lg:text-nav-link relative z-[999] border-b border-border-light border-opacity-[0.45] block}
+.site-header .main-nav ul{  @apply flex items-start justify-start  lg:items-center lg:justify-around leading-[3.125rem] w-full pt-[3.125rem] lg:pt-0}
+.site-header .main-nav ul li{ @apply w-full border-t  border-nav-li-border lg:border-t-0 lg:w-auto }
+.site-header .main-nav ul li:nth-child(2){@apply ml-0 lg:ml-2.5 }
+.site-header .main-nav ul li:nth-child(12) a{  @apply text-red}
+.site-header .main-nav ul li a{  @apply inline-block w-full   px-6 xl:px-8 align-top relative lg:border-t-2 border-transparent hover:border-red}
+.logo{@apply w-full text-center }
+.logo-inner{@apply max-w-[9.375rem] mx-auto lg:mx-0  lg:max-w-[14.375rem] }
+.logo svg{@apply  mx-auto lg:mx-0  }
+
+
+body.menu-opened{ @apply overflow-hidden lg:overflow-auto;}
+.menu-opened .hdr-right ul{  @apply right-0}
+.menu-opened .menu-btn{  @apply hidden left-auto right-5 visible transition-all ease-in-out duration-200}
+.menu-opened .primary-nav .menu-btn{  @apply !block }
+.menu-opened{  @apply overflow-hidden lg:overflow-visible}
+.menu-btn{  @apply z-[9999] absolute left-4 top-3 lg:top-6 lg:hidden text-[0.5625rem] uppercase leading-none;}
+.menu-btn svg{  @apply w-[1.125rem] mx-auto mb-1}
+.menu-btn svg.close{  @apply hidden}
+.menu-opened .menu-btn svg.humburger-i{  @apply hidden}
+.menu-opened .menu-btn svg.close{  @apply block  h-6 w-6}
+.top-hdr-links{ @apply flex  hidden lg:block lg:w-1/2 px-3 mx-3}
+.top-hdr-links li{ @apply border-r border-box-border last:border-none }
+.top-hdr-links li a{ @apply hover:text-red }
+.main-nav ul.primary-nav{  @apply flex  lg:flex-row flex-wrap fixed lg:relative -left-full lg:left-auto top-0 lg:top-auto bottom-0 
+  lg:bottom-auto bg-white lg:bg-transparent z-50 lg:z-auto w-5/6 md:w-2/5  lg:w-auto max-w-full sm:max-w-full lg:max-w-none 
+  overflow-x-hidden overflow-y-auto lg:overflow-visible transition-all ease-in-out duration-200 lg:-ml-2.5;}
+.menu-opened .main-nav ul.primary-nav{  @apply left-0}
+.menu-opened .main-nav{ @apply lg:before:content-none before:fixed  before:left-0 before:right-0 before:top-0 before:bottom-0 before:bg-black before:bg-opacity-20  }
+.menu-opened .site-header .main-nav ul li a{@apply font-bold}
+
+/* banner sec */
+.banner-sec{ @apply bg-gray-light py-16 mt-4}
+.banner-sec h1{ @apply text-3xl text-center uppercase }
+.locator-main{ @apply  mt-10  align-bottom w-full max-w-[87.5rem] mx-auto px-0 md:px-4 lg:px-6 xl:px-0}
+.left-listing{ @apply w-full md:w-[30rem] lg:w-[33.6875rem] float-left }
+.map-section{@apply w-full md:w-[calc(100%_-_30rem)] lg:w-[calc(100%_-_33.6875rem)]  md:pl-8 float-right}
+.locator-map-block{  @apply w-full  h-[80vh] md:h-screen top-0 order-1 lg:order-none z-[99];}
+.hero-section .hero-content .banner-text.banner-dark-bg{ @apply  border-l-0 inline-block flex flex-col items-center p-4      rounded-lg backdrop-blur-sm bg-Dark-red mx-auto w-[340px] sm:w-[500px] px-2.5 text-center}
+.hero-section .hero-content .banner-text.banner-dark-bg h1{  @apply text-2xl md:text-[1.75rem] mb-1.5 font-normal}
+.hero-section .hero-content .banner-text.banner-dark-bg h3{  @apply text-xl md:text-2xl font-normal}
+.timer .box{  @apply text-base md:text-xl}
+.for-allow{  @apply inline-block w-full mb-2.5 text-red}
+
+/* Mobile btns */
+.mobile-btns{  @apply flex md:hidden justify-between w-full mb-3.5 float-left}
+.mobile-btns .button-bx{  @apply m-0 w-full justify-between flex-row}
+.mobile-btns .button-bx .btn{  @apply w-1/2 border-0 !border-b !border-box-border  text-lg font-second-main-font !capitalize}
+.mobile-btns .button-bx .btn + .btn{  @apply mt-0}
+.mobile-btns .btn.mapBtn{@apply text-lg font-second-main-font   }
+body:not(.mapView) .mobile-btns .btn.listBtn{  @apply text-Dark-red border-t-0 border-l-0 border-r-0 !border-b-2 !border-red   !capitalize  hover:bg-transparent  }
+.browse-dir{  @apply ml-4 md:ml-0}
+.browse-dir a{@apply hover:no-underline }
+body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l-0 border-r-0 !border-b-2 !border-red  text-lg font-second-main-font !capitalize hover:bg-transparent  }
+
+/* left listing */
+.search-bx{@apply  mb-0  z-20 px-4 md:px-0  pt-0 pb-6 text-gray-dark float-left w-full md:w-[30rem] lg:w-[33.6875rem] border-b border-[#d8d8d8] }
+.search-bx button{ @apply float-left mr-0 relative text-white text-xs sm:text-sm }
+.search-bx button.useMyLocation {@apply text-dark-gray flex items-center font-second-main-font text-lg}
+.search-bx button.useMyLocation .icon{@apply mr-1.5}
+.search-field{@apply flex relative  }
+.search-bx .search-btn{@apply absolute top-0 rounded-none right-0  text-white p-2 w-2/12 h-12 text-center bg-cookies-link}  
+.search-bx .search-btn svg{ @apply mx-auto}
+.search-field input{@apply  w-full bg-white h-12 text-dark-gray placeholder:text-dark-gray  py-2 pr-20 sm:py-4 sm:pr-40 pl-4 leading-7  text-[1.0625rem] font-main-font  border border-[#8c8c8c] rounded-none }
+.location p{ @apply mr-2 absolute rounded-lg -left-4 top-[0px] sm:top-[2px] xl:top-1}
+.search-bx .whitespace-nowrap{  @apply text-white !font-normal py-0 }
+.location{ @apply  border-b border-[#d8d8d8]  mt-0 }
+.location .result-inner .address-with-availablity {@apply mb-0}
+
+.location .result-inner .svg-map-icn svg{@apply fill-gray }
+.location.fixed-hover .result-inner .svg-map-icn svg{@apply fill-red }
+
+   
+.location .button-bx{  @apply max-w-lg justify-start xl:mx-auto pl-2 flex-row lg:pl-7}
+.result-list .location{ @apply first:mt-0}
+.location .button-bx .btn{@apply w-[9.75rem] bg-Dark-red font-second-main-font text-lg  border-none text-white    }
+.location .button-bx .btn.notHighligh{@apply w-full md:w-[48%] bg-transparent justify-start mt-0  border-none text-black underline  }
+.location .button-bx .btn + .btn{  @apply mt-2 ml-2 md:mt-0 hover:no-underline   w-auto }
+.location .button-bx .btn:hover svg{@apply !fill-red }
+.map-count{ @apply absolute text-white left-1/2 -translate-x-1/2 top-2 md:top-1 2xl:top-1 font-second-main-font text-xs }
+#result-1 .result-inner{ @apply pt-0 md:pt-4}
+#result-1 .result-inner .availablity-content{@apply mt-2}
+.location-phn{ @apply underline hover:!no-underline text-lg }
+.fliter-sec{ @apply mt-2 flex items-start sm:items-center justify-start sm:justify-between  flex-col sm:flex-row}
+.location .result-inner .green-dot, .location .result-inner .red-dot{ @apply  flex justify-center items-center flex-row-reverse  }
+.location .result-inner .green-dot svg, .location .result-inner .red-dot svg{ @apply  ml-1 mt-1 }
+.location-with-filter{ @apply mb-6 flex items-center justify-between text-sm leading-5}
+.location-with-filter h1{@apply text-lg font-normal text-dark-gray my-0 font-second-main-font text-[1.75rem]}
+.list-count{ @apply border-b border-gray-light mb-4 p-2 flex  flex-row items-center}
+.result-inner{@apply p-4 }
+.button-bx{@apply flex flex-col sm:flex-row mt-2.5 justify-around  ml-6}
+.button-bx .btn{@apply py-1.5 md:py-2  text-center cursor-pointer leading-4 sm:leading-[1.375rem] w-full sm:w-[48%]  
+   px-2 transition-all duration-300 hover:bg-hover-btn text-gray-dark
+    hover:text-white   border-black border hover:border-transparent  bg-white text-sm md:text-base font-medium flex items-center justify-center  }
+.button-bx .btn + .btn{  @apply mt-2 sm:mt-0}     
+.button-bx .btn:hover svg{@apply fill-white  }
+.scrollbar-container{@apply md:pr-3 md:!h-[calc(100vh_-_11rem)]}
+.scrollbar-container.ps--active-y{ @apply pr-6}
+body .ps:hover .ps__rail-y{@apply opacity-100}
+body .ps__rail-y{ @apply opacity-100 mt-4 !bg-gray-light w-4}
+body .ps__thumb-y{ @apply bg-gray-dark opacity-100 right-1 w-2}
+body .ps__rail-y:hover .ps__thumb-y{ @apply w-2 bg-gray-dark}
+table.day-hrs{  @apply border-none w-full mb-4}
+table.day-hrs td{ @apply   text-right  }
+.storelocation-openCloseTime table.day-hrs{  @apply bg-white xl:max-w-md 2xl:max-w-lg border   mx-auto xl:right-3.5 relative}
+.storelocation-openCloseTime table.day-hrs .dayName{  @apply w-auto}
+.storelocation-openCloseTime table.day-hrs .time-group{  @apply w-full justify-between }
+.storelocation-openCloseTime .day-hrs td{  @apply px-2.5}
+.storelocation-openCloseTime .day-hrs td.dayName{  @apply pl-8}
+.storelocation-openCloseTime table.day-hrs .currentDay .dayName .checked{  @apply left-2.5}
+
+/* .storelocation-openCloseTime table.day-hrs .time-b{
+  @apply bg-location-bg
+} */
+
+table.day-hrs tr:last-child td{  @apply border-b-0}
+table.day-hrs .dayName{ @apply text-lg md:text-lg capitalize pl-0 py-0 text-left}
+table.day-hrs .currentDay .dayName{  @apply relative  py-1}
+table.day-hrs .currentDay{  @apply font-bold}
+
+/* table.day-hrs .currentDay .dayName .checked{  @apply absolute top-1/2 -mt-2 left-0 bg-red rounded-sm w-4 h-4 z-0}
+table.day-hrs .currentDay .dayName .checked:after{  @apply content-[''] border-b-2 border-l-2 border-white transform -rotate-45 z-0 w-2.5 h-1.5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -mt-1} */
+table.day-hrs .time-group{ @apply inline-flex items-center lowercase}
+table.day-hrs .time-group .dash{ @apply w-2.5 h-0.5 bg-nav-link mx-1.5}
+table.day-hrs .dayName span{ @apply block text-nav-link font-normal}
+table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rounded-sm inline-block align-bottom text-center my-0.5}
+.hours-sec .hours-div{  @apply relative}
+.hours-sec .hours-div .holy-hrs{  @apply absolute -bottom-4 left-0   font-second-main-font  text-gray flex flex-row items-center}
+.hours-sec .hours-div .holy-hrs a{ @apply underline hover:no-underline  text-lg }
+.hours-sec .hours-div .holy-hrs span{ @apply mr-2 }
+.ReactModal__Body--open{
+  @apply overflow-hidden
+}
+.ReactModal__Content{ 
+  @apply max-w-[94%] md:max-w-3xl w-full max-h-[80%] !mr-0 !p-0 !pb-8 !border-none  !rounded-none
+}
+.ReactModal__Overlay{
+  @apply !bg-black bg-opacity-80 z-[999]
+}
+.ReactModal__Content .closeButton {@apply absolute right-4 top-2 cursor-pointer}
+.pop-up-holyhrs{@apply flex flex-row border border-dark-gray mx-4  border-b-0 last:border-b}
+.pop-up-holyhrs > div{@apply flex-[1_1_0] p-1.5 md:p-2.5}
+.pop-up-holyhrs.heading{@apply bg-dark-gray text-white}
+.holytime-sec{@apply w-48 flex justify-evenly}
+.spac-bx{@apply w-8 text-center}
+.op-time{@apply w-8  lowercase}
+.cl-time{@apply w-8 lowercase}
+.days-sec{@apply w-8 lowercase}
+.closeButton{
+  @apply bg-red flex items-center justify-center rounded-full hover:opacity-80
+}
+.closeButton svg{
+  @apply w-3.5
+}
+.closeButton svg path{
+  @apply fill-white
+}
+
+
+
+
+.location-name-miles{
+  @apply relative pr-0 md:pr-[6.25rem] leading-5 mb-2.5 flex !flex-row justify-between items-center md:flex-col 
+}
+.location-name-miles h2{  @apply text-3xl md:text-lg leading-[1.375rem] text-red md:leading-tight}
+.location-name-miles h2 a{ @apply text-[1.375rem] text-cookies-link font-second-main-font}
+
+.location-name-miles .distance{
+  @apply sm:absolute sm:-top-0.5 right-0 text-base md:text-lg mt-1 sm:mt-0
+}
+.icon-row a{
+  @apply hover:underline
+}
+
+.icon-row{
+  @apply pl-7 relative mb-3 flex flex-col
+}
+.icon-row.location-name-miles{
+  @apply mb-2
+}
+.icon-row .icon{
+  @apply absolute top-0 left-0
+}
+.icon-row .icon img, .icon-row .icon svg{
+  @apply w-5 mr-0
+}
+.icon-row h6{
+  @apply font-normal text-red m-0 leading-5 text-base md:text-lg md:leading-5 mb-1.5
+}
+.availablity-content{
+  /*  border-l border-nav-link*/ @apply pl-0 py-1.5 
+}
+
+
+.gm-style-iw{ @apply  !px-0 max-w-full md:!max-w-[24.312rem] lg:!max-w-full}
+.gm-style .gm-style-iw-c{@apply !rounded-none }
+.gm-style-iw-d .button-bx{@apply !justify-start flex-row }
+.gm-style-iw-d .button-bx .getdirection{@apply !bg-transparent !text-gray underline }
+.gm-style-iw-d .button-bx .getdirection1{@apply !bg-transparent  !text-gray underline }
+
+.info-window-content{@apply flex   justify-between}
+.info-window-content .address{ @apply w-2/3 }
+.gm-ui-hover-effect{@apply !top-2  !right-4}
+.gm-ui-hover-effect span{@apply !w-6 !h-6 }
+.open-now-string svg{  @apply fill-gray-dark}
+
+
+.closeing-div .opendot{ @apply  text-lg font-second-main-font text-gray relative before:hidden after:hidden  after:bg-[#338833] after:w-2 after:h-2  after:absolute after:top-1/2  after:ml-2 after:-translate-y-1/2  after:rounded-full}
+.closeing-div .closeddot{ @apply  text-lg font-second-main-font text-gray relative  before:hidden after:hidden after:bg-[#EB001B] after:w-2 after:h-2  after:absolute after:top-1/2  after:ml-2 after:-translate-y-1/2  after:rounded-full}
+
+.banner-dark-bg .closeing-div .opendot{ @apply  font-main-font text-xl text-gray relative before:hidden after:hidden }
+.banner-dark-bg .closeing-div .closeddot{ @apply  font-main-font text-xl text-gray relative before:hidden after:hidden   }
+.detail-page .notHighlight{ @apply  text-2xl}
+.green-dot, .red-dot{ @apply  flex justify-center items-center  }
+.green-dot svg, .red-dot svg{ @apply  mr-1  }
+
+
+/* pagination */
+nav[aria-label="Pagination"] button{ @apply rounded-none text-Dark-red border-Dark-red}
+nav[aria-label="Pagination"] button:hover, nav[aria-label="Pagination"] button.bg-primary-light{ @apply bg-Dark-red text-white}
+nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opacity-60 bg-opacity-60}
+.pagination-conatiner{ @apply mt-4}
+.nearby-btn .btn{ @apply !w-full}
+.nearby-card .button-bx{@apply ml-0 lg:ml-0 flex-row justify-start }
+.nearby-card .button-bx .btn{@apply w-[9.75rem] bg-Dark-red hover:bg-hover-btn font-second-main-font py-2.5  border-none text-white  }
+.nearby-card .button-bx .btn.notHighligh{@apply w-full md:w-[48%] ml-2 bg-white justify-start  border-none text-black underline  }
+.nearby-card .button-bx .btn + .btn{@apply mt-2 md:mt-0 w-auto hover:no-underline}
+.nearby-card .button-bx .btn:hover svg{@apply !fill-red }
+.map-section .button-bx .btn{@apply w-[11.25rem] md:w-[9.25rem] lg:w-[11.25rem]  bg-Dark-red hover:bg-hover-btn font-second-main-font  border-none text-white  }
+.map-section .button-bx .btn.notHighligh{@apply w-full md:w-[48%] bg-white justify-start  border-none text-black underline  }
+.map-section .button-bx .btn + .btn{@apply mt-2 md:mt-0 w-auto ml-2 hover:no-underline}
+.map-section .button-bx .btn:hover svg{@apply !fill-red }
+
+.nearby-card .green-dot svg, .nearby-card .red-dot svg{@apply order-2 ml-1 mt-1 }
+
+
+
+/* locator page start  */
+
+/* breadcrumb */
+.breadcrumb{@apply mt-2 text-nav-link py-2}
+.breadcrumb ul{
+  @apply flex flex-wrap items-center
+}
+.breadcrumb ul li{
+  @apply md:mr-2.5 font-second-main-font text-dark-gray flex items-center text-base md:text-base
+}
+.breadcrumb ul li .home{
+  @apply underline
+}
+
+.breadcrumb ul li{
+  @apply after:content-[''] last:after:content-none after:w-1.5 after:h-1.5 md:after:w-2 md:after:h-2 after:border-r after:border-b after:border-nav-link after:transform after:-rotate-45 after:mx-1.5 md:after:mx-1.5
+}
+.breadcrumb ul li a{ 
+  @apply hover:text-red font-main-font
+}
+
+/* hero-banner */
+.hero-section{  @apply relative z-0 overflow-hidden bg-black}
+.hero-section .hero-image{  @apply w-full h-full z-10 object-cover object-center absolute top-0 left-0 opacity-60
+}
+.hero-section .hero-content{ @apply relative z-10 text-white text-base md:text-2xl py-6 md:py-14 leading-7 md:leading-10 min-h-[220px] md:min-h-[290px] flex w-full items-center
+}
+.hero-section .hero-content .banner-text{  @apply border-l-2 border-dashed border-white px-7}
+.hero-section .hero-content h1{  @apply text-3xl md:text-5xl font-normal mb-3}
+.hero-section .hero-content p{@apply max-w-2xl}
+.banner-text h1{ @apply text-red text-[2.4375rem] mb-3  mt-8 font-second-main-font}
+
+/* address sec */
+.location-information{  @apply flex flex-wrap w-full justify-between xl:justify-start max-w-[87.5rem] mx-auto md:px-5 xl:px-4 2xl:px-0 pb-7 pt-1 md:py-11}
+.address-main-sec{@apply bg-address-bg px-4 md:px-6 py-4 md:py-6 w-full md:w-[48%]  lg:w-[24.8125rem] relative z-[0] md:mr-4 order-2 md:order-none mt-4 md:mt-4 lg:mt-0; } 
+.address-main-sec .address-text{ @apply text-lg md:text-lg}
+.address-main-sec .map-sec{ @apply block h-72 -ml-4 w-[100vw] md:hidden}
+.box-title{@apply font-second-main-font text-[1.3125rem] md:text-[1.375rem] mb-4}
+.title-with-link{@apply flex justify-between items-center mb-4}
+.title-with-link .box-title{ @apply mb-0}
+.title-with-link-1{@apply flex justify-between items-center mb-4}
+.title-with-link-1 .box-title{ @apply mb-0}
+.text-link{ @apply relative cursor-pointer capitalize text-red hover:text-black after:content-[""] after:bg-black after:h-px after:absolute after:left-0 after:bottom-0 after:w-0 after:transition-all after:duration-500 after:hover:w-full before:content-[""] before:bg-red before:h-px before:absolute before:left-0 before:bottom-0 before:w-full  }
+.address-bx{@apply text-base }
+.address-bx, .phone-bx{ @apply text-base  }
+.address-bx h4{@apply text-red font-normal text-base uppercase }
+.phone-bx h4{@apply text-red font-normal text-base uppercase }
+.hours{ order: 0; @apply bg-hours-bg mt-5  lg:mt-0 w-full md:w-[48%] lg:w-[24.8125rem] p-4 md:p-6 lg:mr-4}
+.address-with-availablity{  @apply flex  items-start flex-col}
+.address-with-availablity .address{  @apply pr-5}
+.address-with-availablity > div{  @apply flex-1}
+.address-with-availablity > .availablity-content{  @apply   w-full flex   flex-wrap}
+.opennow-sec{@apply w-3/5 even:w-2/5 flex flex-row items-center text-lg sm:text-lg mb-2.5}
+.opennow-sec .icons{@apply min-w-[0.75rem] sm:min-w-[1.25rem] mr-1 sm:mr-1}
+.opennow-sec .icons img{@apply w-5 sm:w-5}
+.direction-button{@apply mt-6 }
+.direction-button a{@apply  !bg-Dark-red !text-white  !border-button-light hover:!border-transparent !border-2 }
+.direction-button .btn:hover svg{@apply !fill-red }
+.opennow-sec.deactive-feci{@apply opacity-70 text-red }
+.address-main-sec .button-bx{  @apply mt-5 justify-start ml-0 md:ml-0}
+.address-main-sec .button-bx .btn{  @apply min-w-[10.25rem] w-40 py-3 uppercase font-second-main-font !border-none hover:!bg-hover-btn leading-5  md:w-auto  }
+.availability-col{  @apply mt-4  mb-0 pl-0    !flex-row flex-wrap}
+.map-sec{  @apply  hidden md:block w-full mt-5 lg:mt-0  h-[25rem] lg:h-auto  lg:w-[calc(100%_-_51.625rem)]}
+.map-sec.without-hours{  @apply md:w-[48%] md:mt-0 lg:w-[calc(100%_-_26rem)]}
+
+.about-sec{@apply  lg:bg-light-grey relative px-5 mt-0 lg:mt-7 pt-0 lg:py-12 lg:px-14   }
+.about-sec .about-content{@apply mt-5 lg:mt-0 w-full overflow-visible lg:w-[57.6%] xl:w-[50.6%] ml-auto lg:pr-10 lg:pb-12 lg:pt-6 xl:pt-12 flex items-center}
+.about-sec .about-content h2{@apply hidden !text-left lg:block font-medium text-red font-second-main-font  text-[1.625rem]  }
+.about-inner-sec h2{@apply block text-center w-full  pb-6 lg:pb-0 lg:hidden font-medium text-red font-second-main-font  text-[1.625rem]}
+.about-inner-sec img{@apply max-w-full w-full lg:w-auto}
+.about-sec .content-center{ @apply flex lg:inline-block justify-center }
+.about-sec .about-content .about-content-inner{@apply text-black leading-7 text-lg mt-3 md:mt-6 }
+.about-sec .about-content .btn{@apply mt-6  }
+.about-inner-sec{ @apply flex flex-wrap }
+.right-description .content-inner{@apply text-black leading-7 text-lg mt-3 md:mt-6 }
+.button-red{@apply btn  text-center font-second-main-font border border-red hover:bg-hover-btn bg-red-eb px-3 lg:px-5  xl:px-7 uppercase text-xs xl:text-base !leading-9 inline-block  text-white   py-0.5 }
+.about-sec .about-content .button-red{@apply w-[9.75rem] text-base }
+.about-inner-sec .splide .splide__arrows{ @apply absolute bottom-0 left-0 p-0.5 flex}
+.about-inner-sec .splide .splide__arrows .splide__arrow{  @apply relative top-auto left-auto transform translate-x-0 translate-y-0 !opacity-100 right-0 w-[4.375rem] h-[3.75rem] rounded-none bg-white disabled:hidden}
+.about-inner-sec .splide .splide__arrows .splide__arrow.splide__arrow--next{  @apply ml-0.5}
+.about-inner-sec .splide__track{  @apply lg:h-full}
+.about-inner-sec .splide__slide img{ @apply lg:h-full lg:object-cover transition-all duration-300}
+.about-inner-sec .splide__slide img:hover{@apply transform scale-105}
+.splide__slide img{  @apply w-full}
+.splide{  @apply w-full}
+.offerBanner{  @apply w-full pb-7 md:pb-10}
+.offerBanner img{  @apply w-full shadow-2xl}
+
+.gallery-sec{@apply  m-0 relative  }
+.gallery-bg{@apply absolute inset-0 -z-10 }
+.gallery-bg img{@apply  w-full h-full }
+.photos-row{@apply grid gap-3 md:grid-cols-2  lg:grid-cols-3}
+.image-frame{@apply !m-2 border p-3 border-dashed border-gray-dark w-full  }
+.photos-row img{@apply w-full  rounded-none object-cover h-80  }
+
+/* services sec */
+.services-sec{@apply bg-white w-full pt-8 pb-16 md:py-9 }
+.sec-title{@apply mb-4 md:mb-7}
+.sec-title h2, .sec-title h1{@apply text-center text-2xl font-second-main-font md:text-[1.75rem] text-red  }
+.sec-title h1{@apply mb-5}
+.services-inner{@apply flex flex-wrap  }
+.services-inner .service-icon{@apply  m-0 }
+.services-inner .item{@apply px-2 w-full sm:w-1/2 lg:w-1/3 my-2}
+.services-inner .service-item{@apply border border-box-border flex flex-col p-0 w-full h-full }
+.service-item .service-img{@apply overflow-hidden}
+.service-img img{@apply h-52 object-cover transition-all duration-300}
+.service-item:hover img{@apply transform scale-105}
+.service-item h3{ @apply text-lg md:text-lg font-second-main-font text-left mt-4 mb-2  }
+.service-desc-main{ @apply  px-3  pb-5 }
+.service-desc{@apply text-base text-left min-h-[4.25rem]   }
+.services-inner  .service-item .button-bx{@apply justify-start  max-w-[10.0625rem] sm:max-w-none  }
+.services-inner  .service-item .button-bx .btn{ @apply uppercase font-second-main-font  max-w-[10.0625rem] text-base border-gray }
+
+.services-inner #splide-nearby{
+  @apply max-w-[20rem] sm:max-w-[30rem] md:max-w-[40rem] xl:max-w-full mx-auto
+}
+.mobile-serv-item .service-img{@apply rounded-full w-32 h-32  }
+.services-inner .mobile-serv-item .service-item{@apply items-center }
+.services-inner .button-bx .btn{ @apply text-xs}
+.services-inner .mobile-serv-item{@apply w-full h-full}
+.services-inner .splide__arrow--prev{@apply -left-8 }
+.services-inner .splide__arrow--next{ @apply -right-8 }
+
+
+/* faq */
+.faq-main-sec{@apply m-0 relative pb-7 pt-0 md:pb-12 }
+.faq-sec{@apply m-0 }
+.faq-card { @apply backdrop-blur-sm w-11/12 max-w-[43.25rem] p-4 md:p-5 pb-10 bg-white/90 mx-auto }
+.faq-card h2{@apply  py-2 md:py-4 font-second-main-font  text-center relative text-[1.75rem] md:text-[1.75rem] uppercase text-red  before:bg-dots before:absolute before:left-0 before:top-0  }
+.faq-tab{@apply w-full text-left mt-0 border-b border-b-box-border }
+.faq-tab .faq-tab-label{ @apply w-full font-second-main-font text-xl border-none  text-black pl-4 pr-12 py-2.5 hover:text-red}
+.faq-tab .faq__question-button{@apply leading-7 relative w-full text-left after:absolute after:top-3 after:right-4 after:w-5 after:h-5 md:after:w-7 md:after:h-7 after:rounded-full   after:bg-plus_icon after:bg-center after:bg-no-repeat after:bg-[length:.625rem_.625rem] md:after:bg-[length:1rem_1rem] }
+.faq-tab .faq__question-button[aria-expanded="true"]{ @apply after:bg-minus_icon}
+.faq-tab  .faq-tab-label.active{  @apply border-b-transparent before:opacity-0 }
+.faq-tab  .faq-tab-label{ @apply flex justify-between items-center relative font-normal cursor-pointer border-b border-faq-border }
+.faq-tab-content{@apply px-4  text-lg text-black py-3 bg-opacity-25 my-3 }
+.faq-tab-label.active{ @apply justify-start }
+.view-more{  @apply text-center mt-5}
+
+/* near by */
+.nearby-sec{@apply bg-transparent md:bg-light-grey w-full pt-7 pb-0 md:py-[3.75rem] }
+.nearby-sec-inner{@apply sm:mx-auto sm:max-w-[33.5rem] lg:mx-auto lg:max-w-none flex flex-col lg:flex-row gap-4 justify-center pb-0 xl:pb-0 }
+.nearby-sec .splide__slide{@apply xl:px-4}
+.nearby-card{@apply w-full bg-white overflow-hidden  z-10 relative shadow-sm last:mb-0 lg:last:mb-6  mb-6 lg:mt-6  lg:relative p-3 md:p-5 border border-box-border
+}
+.nearby-card .red-dot{ @apply !justify-start}
+.nearby-card .icon-row{ @apply pl-0}
+.nearby-card .OpenDot{ @apply  font-second-main-font  text-lg}
+.nearby-card h2 a{ @apply font-second-main-font  !text-lg text-black }
+.nearby-card .distance{ @apply absolute right-0 md:right-2 top-0 md:-top-0.5}
+.near-address{ @apply flex mt-2 items-start min-h-[90px]}
+.nearby-card .address { @apply text-lg }
+.nearby-card .availability-col{@apply my-4 hidden md:flex md:max-w-[100%] lg:max-w-none }
+#splide-nearby{  @apply max-w-[20rem] md:max-w-[30rem] xl:max-w-full mx-auto}
+.nearby-sec .splide__pagination{  @apply -bottom-2}
+.nearby-sec .splide__pagination__page{  @apply w-2.5 h-2.5 bg-red !opacity-40}
+.nearby-sec .splide__pagination__page.is-active{  @apply bg-red scale-100 !opacity-100}
+
+/* newsletter sec */
+.newsletter-section{ @apply bg-newslettter_bg_mob lg:bg-newslettter_bg py-6 mt-10 w-full inline-block }
+.newsletter-inner{@apply  max-w-[25.75rem] mx-auto px-4  }
+.newsletter-section p{@apply text-white text-sm md:text-lg text-center md:text-left }
+.search-field-bx{@apply flex mt-6 }
+.search-field-bx input{@apply bg-white text-gray-dark w-full px-3 py-3 text-sm outline-none flex-[1_1_auto] }
+.search-field-bx button{@apply bg-red hover:bg-Dark-red text-white py-3 px-4 text-sm flex-[1_1_auto] whitespace-nowrap }
+.newsletter-logo{@apply    mx-auto w-full mb-6 }
+.newsletter-logo img{@apply mx-auto  }
+
+/* footer sec */
+/* footer sec */
+.site-footer{  @apply pt-8 lg:pt-0}
+.site-footer .container{@apply flex flex-col mx-auto flex-wrap justify-between lg:mt-10 lg:flex-row px-0 lg:px-5 }
+.store-locator{ @apply flex lg:block justify-center w-full lg:w-64 border-b border-border-light lg:border-none px-5 lg:px-0 }
+.link-sec-footer{ @apply w-full lg:w-[58%] pl-0 lg:pl-0 md:pr-0 lg:pr-5 xl:pr-7   flex flex-col flex-wrap  text-left  justify-between text-black	lg:flex-row}
+.copyright-bx{@apply   flex flex-col justify-center w-full lg:w-[20%] items-center mt-5 lg:mt-0 lg:items-start lg:ml-auto px-5 lg:px-0 text-center lg:text-left }
+.copyright-bx .app-icons{ @apply justify-center lg:justify-start}
+.copyright-bx .social-media-bx{ @apply justify-center lg:justify-start}
+.store-locator .store-inner{@apply relative w-1/2 lg:w-auto text-base lg:text-xl mb-4 after:content-[''] after:absolute font-medium justify-center flex items-center flex-col after:border-r lg:after:h-auto lg:after:border-b after:border-black after:-top-2 lg:after:top-auto after:-bottom-2 after:right-0 lg:after:right-auto left-auto lg:after:left-1/4  after:w-1/2  after:last:hidden }
+.store-locator .store-inner a{@apply mt-2 hover:underline font-semibold}
+.company-logo{ @apply  mt-7 lg:mt-10 }
+.social-media-bx{@apply flex-row flex w-full my-5 }
+.social-media-bx li{@apply mx-3}
+.social-media-bx li a{@apply transform transition-all duration-300 scale-100 hover:scale-105 inline-block}
+.company-logo svg{ @apply mr-0  mt-5 w-[166px] h-[70px] }
+.locator-main .result{ @apply border-l-4 border-l-white}
+
+.locator-main .result.active{@apply border-l-4 border-l-hover-border}
+.locator-main .result.fixed-hover.active{@apply border-l-4 border-r-cookies-link}
+.locator-main .result.fixed-hover{@apply border-l-4 border-r-cookies-link}
+.footer-block{  @apply border-b border-border-light py-3 lg:py-0 lg:border-none px-5}
+.footer-block-title{  @apply text-lg lg:text-[1.28571rem] font-semibold leading-6 pb-1 lg:pb-2}
+.footer-block ul li a{  @apply text-base leading-6 py-1 inline-block align-top hover:underline}
+.site-footer .MuiPaper-elevation{ @apply !rounded-none shadow-none border-b border-[#b2b3b5] !my-0 before:hidden }
+.site-footer .MuiPaper-elevation .MuiTypography-root{ @apply font-bold !font-main-font }
+.site-footer .MuiPaper-elevation .MuiTypography-root .MuiAccordionSummary-content{ @apply my-2.5}
+.site-footer .MuiButtonBase-root{@apply !min-h-[2.125rem]}
+.site-footer .MuiButtonBase-root .MuiAccordionSummary-expandIconWrapper{@apply transition-none }
+.site-footer .MuiButtonBase-root .MuiAccordionSummary-content{@apply !my-0 py-3}
+.site-footer .Mui-expanded .MuiAccordionSummary-content{@apply pb-0}
+.site-footer .Mui-expanded .MuiAccordionSummary-content .MuiAccordionDetails-root{@apply pt-0}
+.site-footer .MuiPaper-elevation .MuiTypography-root li{ @apply list-none}
+.site-footer .MuiAccordionSummary-expandIconWrapper.Mui-expanded{@apply   content-[''] absolute  right-[1rem] transform -translate-x-1/2 -translate-y-1/2 w-3 lg:w-3 h-[1px] lg:h-0.5 bg-black }
+.site-footer .MuiAccordionSummary-expandIconWrapper.Mui-expanded svg{@apply hidden  }
+.site-footer .MuiPaper-elevation .MuiTypography-root li a{ @apply !font-normal !font-main-font}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate
+{
+  0%
+  {
+    transform:rotate(45deg);
+  }
+  100%
+  {
+    transform:rotate(405deg);
+  }
+}
+.spinner-main {  position: fixed;  top: 0;  bottom: 0;  left: 0;  right: 0;  z-index: 999;  background: rgba(0, 0, 0, 0.8);}
+.spinner-container {  position:absolute;  top:50%;  left:50%;  transform:translate(-50%,-50%);  width:50px;  height:50px;  background:transparent;  border:2px solid #fff;  border-radius:50%;  text-align:center;  line-height:150px;  font-family:sans-serif;  font-size:20px;  color:black;     z-index: 9999;  letter-spacing:4px;  text-transform:uppercase;  text-shadow:0 0 10px #eb0000;  box-shadow:0 0 20px rgba(0,0,0,.5);}
+
+.loading-spinner{  display:block;  position:absolute;  top:calc(50% - 2px);  left:50%;  width:50%;  height:4px;  background:transparent;  transform-origin:left;  animation:animate 2s linear infinite;}
+.loading-spinner:before{  content:'';  position:absolute;  width:8px;  height:8px;  border-radius:50%;  background:#eb0000;  top:-3px;  right:-4px;  box-shadow:0 0 20px #eb0000;}
+.hero .hero-content h1.small-heading{  @apply text-5xl}
+.content-list{  @apply pt-7 md:pt-[3.75rem] pb-4 md:pb-8 bg-button-light bg-opacity-25 }
+.content-list .container{  @apply px-4;}
+.region-list{  @apply flex flex-wrap -mx-2 lg:-mx-4}
+.region-list .storelocation-category{  @apply w-1/2 md:w-1/3 lg:w-1/4 px-2 lg:px-4 mb-4 lg:mb-8}
+.region-list .storelocation-category a{  @apply p-6 text-center shadow-[0_3px_5px_rgba(243,243,243,1)] bg-white rounded-md w-full inline-block align-top leading-6 transition-all duration-300 text-sm md:text-base hover:bg-red hover:text-white h-full flex items-center justify-center
+}
+.content-list.city-page{  @apply pb-10 md:pb-14}
+.city-location .button{  @apply px-6}
+.content-list .c_location{@apply px-2.5 lg:px-4 w-full sm:w-1/2 lg:w-1/3 mb-4 md:mb-8}
+.city-location{@apply w-full  h-full bg-white border border-box-border rounded-none overflow-hidden min-h-[22rem]  z-10 relative shadow-sm my-6  lg:relative p-5
+  before:bg-shapet before:hidden after:hidden before:absolute before:-z-[1] before:-right-0.5 before:-top-0.5 before:w-[258px] before:h-[294px] before:bg-no-repeat after:-z-[1] after:w-[220px] after:h-[172px] after:bg-shapeb  after:absolute after:-left-1 after:-bottom-1 }
+.city-location .red-dot, .city-location .green-dot{ @apply !justify-start}
+.locator-map-block .red-dot, .locator-map-block .green-dot{ @apply flex-row-reverse !justify-end  }
+.locator-map-block .red-dot svg, .locator-map-block .green-dot svg{ @apply ml-1  mt-1}
+
+.city-location .button-bx{
+  @apply flex-wrap
+}
+.city-location .button-bx .btn{
+  @apply w-full md:w-[48%]
+}
+.city-location .button-bx .btn + .btn{
+  @apply mt-2 md:mt-0
+}
+
+.city-page .nearby-sec-inner{@apply flex flex-col md:flex-row gap-4 flex-wrap justify-center pb-0 xl:pb-0 max-w-none }
+
+.city-page .nearby-card{@apply w-full md:w-[49%]  xl:w-[32%] bg-white overflow-hidden  z-10 relative shadow-sm last:mb-0 lg:last:mb-0  mb-0 lg:mt-0  lg:relative p-3 md:p-5 border border-box-border
+}
+
+.city-page .nearby-card .availability-col{ @apply md:w-full md:max-w-full lg:max-w-[60%] xl:max-w-full}
+
+
+.city-page .nearby-card .green-dot, .city-page .nearby-card .red-dot{@apply justify-start }
+.city-page .nearby-card .content-col a{ @apply underline hover:no-underline }
+.city-location .button-bx{@apply ml-0 lg:ml-6 flex-row }
+.city-location .button-bx .btn{@apply w-full md:w-[48%] bg-Dark-red font-second-main-font  border-none text-white  }
+.city-location .button-bx .btn.notHighligh{@apply w-full md:w-[48%] bg-white justify-start  border-none text-black underline  }
+.city-location .button-bx .btn + .btn{@apply mt-2 md:mt-0}
+.city-location .button-bx .btn:hover svg{@apply !fill-red }
+
+.CookieConsent{
+  @apply rounded-tl-md rounded-tr-md !bg-black bg-opacity-80 max-w-[26.25rem] !left-1/2 transform -translate-x-1/2 text-center p-3.5 text-sm
+}
+.CookieConsent > div{
+  @apply !m-0 w-full
+}
+.CookieConsent a{
+  @apply text-white underline hover:no-underline
+}
+.CookieConsent button{
+  @apply !bg-[#888] hover:!bg-[#666] !text-white uppercase !px-10 !py-1 leading-6 !border !border-solid !border-[#888] hover:!border-[#666] !m-0 !mt-2.5 min-w-[8.5rem]
+}
+
+
+
+/* 404 page */
+.department-sec{ @apply border-t border-box-border pt-4 }
+.department-sec h3{ @apply text-xl }
+.department-sec ul{ @apply flex  justify-around py-4 flex-wrap }
+.department-sec ul a{ @apply underline hover:no-underline w-1/2 sm:w-1/2 lg:w-auto text-center sm:text-left lg:text-center   }
+
+
+@media only screen and (max-width: 1100px) and (min-width:1024px)  {
+  .opennow-sec{ @apply text-base}
+
+
+}
+
+
+@media screen and (max-width: 767px){
+  body:not(.mapView) .map-section{
+      @apply hidden
+  }
+  body.mapView .left-listing{
+      @apply hidden
+  }
+
+  .gm-style .gm-style-iw-c{
+    @apply !max-w-[22rem]
+  }
+  
+}
+@media screen and (max-width: 420px){
+.availablity-content{ @apply flex-col}
+.opennow-sec{@apply w-full even:w-full}
+.pop-up-holyhrs{@apply mx-1}
+.pop-up-holyhrs div{ @apply text-xs}
+
+.department-sec ul{@apply flex-col }
+.department-sec ul a{@apply w-full }
+}
+
+@media screen and (max-width:359px){
+  .site-header .header-top .logo-sm-mob{ @apply !block}
+  .site-header .header-top .logo-sm-mob svg{ @apply !w-14    }
+  .site-header .header-top .logo-large-mob{ @apply !hidden}
+  table.day-hrs .time-b{@apply w-[2.75rem] }
+
+  .storelocation-openCloseTime table.day-hrs{ @apply text-xs}
+  .storelocation-openCloseTime .day-hrs td.dayName{@apply pl-6}
+  .storelocation-openCloseTime table.day-hrs .currentDay .dayName .checked{@apply left-1}
+}
+
+
