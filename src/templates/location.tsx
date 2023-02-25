@@ -48,6 +48,8 @@ import FeaturesBrand from "../components/locationDetail/FeaturesBrand";
 import { Fade, Slide } from "react-awesome-reveal";
 import MgmTimber from "../components/locationDetail/MgmTimber";
 import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
+// import Header1 from "../components/layouts/NewHeader";
+import Header1 from "../components/layouts/NewHeader";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -440,9 +442,9 @@ breadcrumbScheme.push({
       >
         {" "}
         <AnalyticsScopeProvider name={""}>
-      <PageLayout global={_site}>
+      {/* <PageLayout global={_site}> */}
 
-
+      <Header1 _site={_site}/>
       <div className="container">
             <div className='banner-text banner-dark-bg justify-center text-center'>
               <h1 className="">{name} {name}</h1>
@@ -477,8 +479,8 @@ breadcrumbScheme.push({
           </div>
           
         </div>
-
-      </PageLayout>
+        <Footer _site={_site}/>
+      {/* </PageLayout> */}
       </AnalyticsScopeProvider>
       </AnalyticsProvider>
     </>

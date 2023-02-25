@@ -24,6 +24,8 @@ import {
 } from "@yext/pages/components";
 import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
 import Header from "../components/layouts/NewHeader";
+import Footer from "../components/layouts/footer";
+import Header1 from "../components/layouts/NewHeader";
 
 // export const config: TemplateConfig = {
 //   stream: {
@@ -196,7 +198,7 @@ const Locator: Template<TemplateRenderProps>= ({
         {" "}
         <AnalyticsScopeProvider name={""}>
       {/* <PageLayout global={_site}> */}
-      <Header _site={_site}/>
+      <Header1 _site={_site}/>
         <SearchHeadlessProvider
           experienceKey={AnswerExperienceConfig.experienceKey}
           locale={AnswerExperienceConfig.locale}
@@ -215,6 +217,7 @@ const Locator: Template<TemplateRenderProps>= ({
       {/* </PageLayout> */}
       </AnalyticsScopeProvider>
       </AnalyticsProvider>
+      <Footer _site={_site}/>
     </>
   );
 };

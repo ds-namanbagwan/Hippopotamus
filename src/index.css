@@ -283,6 +283,12 @@ table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rou
 .green-dot, .red-dot{ @apply  flex justify-center items-center  }
 .green-dot svg, .red-dot svg{ @apply  mr-1  }
 
+/* USe my location */
+.useMyLocation{
+  margin-right: 500px;
+}
+
+/* Use my Location */
 
 /* pagination */
 nav[aria-label="Pagination"] button{ @apply rounded-none text-Dark-red border-Dark-red}

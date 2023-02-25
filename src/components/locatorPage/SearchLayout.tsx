@@ -225,7 +225,7 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
     <>
 
       {/* {loader} */}
-      <div className="breadcrumb">
+      {/* <div className="breadcrumb">
         <div className="container-custom">
           <ul>
             <li>
@@ -235,7 +235,12 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
           </ul>
 
         </div>
-      </div>
+      </div> */}
+<div style={{marginLeft:"32%",marginTop:"2%"}}>
+  <p style={{fontFamily: "Bebas Neue",fontWeight:"bold",fontSize:"270%"}}>{StaticData.Subhead}</p>
+</div>
+
+
       <div className="locator-main">
         {allowlocation.length > 0 ?
           <div className="for-allow">{allowlocation}</div>
@@ -244,6 +249,18 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
           <div className="location-with-filter">
             <h1 className="">{StaticData.FindLocationtext}</h1>
           </div>
+          <div className="flex" style={{width:"35%"}}><p>Enter A Postal Code, City</p></div>
+<div style={{marginLeft:"71%",marginBottom:"3%"}}>
+          <div className="fliter-sec">
+          <button className="useMyLocation" title="Search using your current location!" id="useLocation" onClick={onClick}>
+              <span className="icon" dangerouslySetInnerHTML={{ __html: UseMylocationsvg }} />
+            
+             <span className="underline hover:no-underline"> {StaticData.Usemylocation}</span>
+            
+            </button>
+         
+</div>
+</div>
 
           <div className="search-field">
             <FilterSearch
@@ -305,17 +322,11 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
                 </button>
           </div>
 
-<div className="fliter-sec">
-          <button className="useMyLocation" title="Search using your current location!" id="useLocation" onClick={onClick}>
-              <span className="icon" dangerouslySetInnerHTML={{ __html: UseMylocationsvg }} />
 
-             <span className="underline hover:no-underline"> {StaticData.Usemylocation}</span>
-            </button>
 
-          <ResultsCount
+<ResultsCount
             customCssClasses={{ container: "mx-2 my-0 text-dark-gray" }}
           />
-</div>
         </div>
         <div className="mobile-btns">
           <div className="button-bx">

@@ -121,16 +121,16 @@ function sortByDay(week: Week): Week {
   return orderedWeek;
 }
 
-const weekDays: any = {
-  // "sunday": 0, // << if sunday is first day of week
-  monday: 1,
-  tuesday: 2,
-  wednesday: 3,
-  thursday: 4,
-  friday: 5,
-  saturday: 6,
-  sunday: 7,
-};
+// const weekDays: any = {
+//   // "sunday": 0, // << if sunday is first day of week
+//   monday: 1,
+//   tuesday: 2,
+//   wednesday: 3,
+//   thursday: 4,
+//   friday: 5,
+//   saturday: 6,
+//   sunday: 7,
+// };
 
 const renderHours = (week: Week, c_specific_day: any) => {
   const dayDom: JSX.Element[] = [];
@@ -181,11 +181,11 @@ const renderHours = (week: Week, c_specific_day: any) => {
     i++;
   }
 
-  dayDom.sort(function sortByDay(a: any, b: any) {
-    const day1 = a.key?.toLowerCase();
-    const day2 = b.key?.toLowerCase();
-    return weekDays[day1] - weekDays[day2];
-  });
+  // dayDom.sort(function sortByDay(a: any, b: any) {
+  //   const day1 = a.key?.toLowerCase();
+  //   const day2 = b.key?.toLowerCase();
+  //   return weekDays[day1] - weekDays[day2];
+  // });
   return <tbody key={i}>{dayDom}</tbody>;
 };
 

@@ -67,7 +67,7 @@ function opentime(e: any) {
                href={`/${result.rawData.id}`}>{result.rawData.name}
               </Link></h2>
               {typeof result.distance != "undefined" ?
-                <div className="distance">
+                <div className="distance" style={{marginTop:"20%"}}>
                   {metersToMiles(result.distance)} <span>{StaticData.miles}</span>
                 </div>
                 : ''}
@@ -75,11 +75,8 @@ function opentime(e: any) {
 
             
             <div className="icon-row content-col address-with-availablity notHighlight">
-              <Address address={address} />
-              {result.rawData.hours ? <>
-              <div className="mt-2">
-              {/* <h6>Opening Hours</h6> */}
-                {result.rawData.hours?.reopenDate ? <>
+
+            {result.rawData.hours?.reopenDate ? <>
                   <div className="icon"> <img className=" " src={timesvg} width="20" height="20" alt="" /> </div>
                   <div className=" flex open-now-string items-center " data-id={`main-shop-${result.rawData.id}`} onClick={opentime}>
                     {StaticData.tempClosed}
@@ -89,7 +86,12 @@ function opentime(e: any) {
                     <div className=" flex open-now-string items-center" data-id={`main-shop-${result.rawData.id}`} >
                       <OpenClose timezone={result.rawData.timezone} hours={result.rawData.hours} deliveryHours={result.rawData.hours}></OpenClose>
                     </div></>}
-
+              <Address address={address} />
+              {result.rawData.hours ? <>
+              <div className="mt-2">
+              {/* <h6>Opening Hours</h6> */}
+                
+                <div>{result.rawData.mainPhone}</div>
 
                 {/* <div className={`storelocation-openCloseTime  capitalize hidden`}>
                     {hoursopen?

@@ -50,13 +50,11 @@ export function ResultsCountDisplay({
   }
 
   const messageArray = [
-    'Showing ',
     offset + 1,
-    ' to ',
-    offset + resultsLength,
-    ' of ',
+    ' OF ',
+    // offset + resultsLength,
     resultsCount,
-    ' Results'
+    ' Restaurants Near France'
   ];
 
   const spanArray = messageArray.map((value, index) => {

@@ -9,20 +9,23 @@ export default function Header1(data:props) {
   return (
     <>
 
-      <div className="flex w-full" style={{ backgroundColor: "white" }}>
-        <img src={data?._site?.c_headerlogo?.image.url}/>
-        {/* <div className="flex w-full" style={{width:"100px",marginTop:"50px"}} > */}
-        <div className="flex w-full" style={{ marginTop: "10px" }}>
+      <div className="flex w-full" style={{ backgroundColor: "white" ,height:"100px",boxShadow:"0 2px 4px 0 rgb(0 0 0 / 30%)"}}>
+        <div style={{marginLeft:"50px"}}>
+        <img src={data?._site?.c_headerlogo?.image.url} width="290"/>
+        </div>
+        <div className="flex w-full " style={{ marginTop: "40px",marginLeft:"70px",fontSize:"16px",fontWeight:"bold",color:"black",textAlign:"center"}}>
           {data?._site?.c_headerlable?.map((res: any) => {
             return (
               <>
-                {/* <div style={{width:"2000px",textAlign:"center",fontSize:"25px"}}> */}
-                <div className="flex w-full" style={{ fontSize: "20px", marginTop: "40px" }}>
+                <div className="flex w-full">
                   <a href="{res.link}" style={{ fontStyle: "italic" }}> {res.label}</a>
                 </div>
               </>
             )
           })}
+        </div>
+        <div style={{width:"500px",background:"red"}}>
+
         </div>
       </div>
     </>

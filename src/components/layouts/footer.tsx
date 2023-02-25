@@ -13,10 +13,10 @@ import { useEffect, useState } from "react";
 import Link from "../commons/Link";
 
 const Footer = (props: any) => {
-	const { footer } = props;
+	// const { foo } = props;
 	// const [isNavVisible, setNavVisibility] =  useState(false);
 	const [isSmallScreen, setIsSmallScreen] = useState(false);
-	console.log(footer)
+	// console.log(footer)
 	useEffect(() => {
 		const mediaQuery = window.matchMedia("(max-width: 1024px)");
 		mediaQuery.addListener(handleMediaQueryChange);
@@ -46,11 +46,14 @@ const Footer = (props: any) => {
 
 				<div className="container">
 
-					<div className="store-locator">
+					<div className="store-locator" style={{marginLeft:"500px"}}>
 					<div className="company-logo mr-4">
-							<img src={footer.c_matalan_footer_logo.url} alt="logo"/>
+							<img src={props?._site?.c_headerlogo?.image.url} alt="logo"/>
 							</div>
-						{footer.c_store_finder.map((storfinder: any) => {
+							</div>
+							</div>
+							
+						{/* {data.c_store_finder.map((storfinder: any) => {
 							console.log(storfinder)
 							return (
 								<>
@@ -142,11 +145,11 @@ const Footer = (props: any) => {
 						
 					</div>
 
-				</div>
+						</div>*/}
 
 			</footer>
 
-			<CookieConsent
+			{/* <CookieConsent
 				buttonText={"Accept"}
 				buttonStyle={{
 					marginLeft: "100px",
@@ -159,13 +162,7 @@ const Footer = (props: any) => {
 					</a>
 					.
 				</p>
-			</CookieConsent>
+			</CookieConsent> */}
 		</>
-	);
-};
-
-// export default Footer;
-// function handleMediaQueryChange(mediaQuery: MediaQueryList) {
-// 	throw new Error("Function not implemented.");
-// }
-
+)}
+export default Footer;
