@@ -27,14 +27,14 @@ const Contact = (props: any) => {
   return (
     <>
       <div className="address-main-sec">
-        <h4 className="box-title">{c_storeInfoHeading?c_storeInfoHeading:"Store Details"}</h4>
+        <h4 className="box-title" style={{color:"#a61615"}}>{c_storeInfoHeading?c_storeInfoHeading:"INFO"}</h4>
 
         <div className="icon-row content-col">
           <div className="icon">
             {" "}
-            <img className=" " src={mapimage} width="20" height="20" alt="mapimage" />
+            {/* <img className=" " src={mapimage} width="20" height="20" alt="mapimage" /> */}
           </div>
-          <div className="  address-text notHighlight">
+          <div className="  address-text notHighlight" style={{marginLeft:"-7%"}}>
             {address.line1}
             <div>{address.line2 && <div>{address.line2}</div>}</div>
             <div>{address.city}</div>
@@ -46,9 +46,9 @@ const Contact = (props: any) => {
           <div className="icon-row">
             <div className="icon">
               {" "}
-              <img className=" " src={Phonesvg} width="22" height="22" alt="phonesvg" />
+              {/* <img className=" " src={Phonesvg} width="22" height="22" alt="phonesvg" /> */}
             </div>
-            <div className="content-col">
+            <div className="content-col" style={{marginLeft:"-7%"}}>
               <a id="address" className=" location-phn" href={`tel:${phone}`}>
                 {phone}
               </a>
@@ -69,6 +69,12 @@ const Contact = (props: any) => {
           </li>
         </ul>
 
+        <ul className="">
+          <li className="button-bx direction-button">
+            {StaticData.Button}
+          </li>
+        </ul>
+
         <div className="map-sec">
           <CustomMap prop={yextDisplayCoordinate} />
         </div>
@@ -79,9 +85,9 @@ const Contact = (props: any) => {
         <div className="hours">
           <div className="hours-sec">
             <div className="title-with-link-1">
-              <h4 className="box-title">{"Store Opening Hours"}</h4>
+              <h4 className="box-title" style={{color:"#a61615"}}>{"OPENING HOURS"}</h4>
             </div>
-            <div className="hours-div mb-5 md:mb-1 flex flex-col">
+            <div className="hours-div mb-5 md:mb-1 flex flex-col" style={{marginLeft:"-5%"}}>
               {hours.holidayHours && typeof hours.reopenDate == "undefined" ? (
                 <>
                   <Model

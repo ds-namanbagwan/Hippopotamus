@@ -200,7 +200,8 @@ export const OpenStausFunctions = {
         return (
           <div className={"opendot green-dot"}>
            
-            <div className="hours-info ">
+            <div className="hours-info " style={{fontSize:"170%",marginTop: "2%",color:"#a61615",
+    fontWeight:"bold" }}>
               {" "}
               <span className="font-second-main-font "> Open now - </span>
               <span className="lowercase">
@@ -247,7 +248,8 @@ export const OpenStausFunctions = {
           <div className={"closeddot 3"}>
             <div className="red-dot">
              
-              <div className="hours-info">
+              <div className="hours-info" style={{fontSize:"170%",marginTop: "2%",color:"#a61615",
+    fontWeight:"bold" }}>
                 <span className="font-second-main-font">Closed - </span>
                 {"Opens  "}
                 <span className="lowercase">
@@ -381,7 +383,7 @@ export const OpenStausFunctions = {
   },
 };
 
-export default function OpenClose(props: any) {
+export default function OpenClose1(props: any) {
   let a;
   let s;
   let dateNewFormat: any;

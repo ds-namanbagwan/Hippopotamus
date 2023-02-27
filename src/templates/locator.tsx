@@ -26,6 +26,7 @@ import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
 import Header from "../components/layouts/NewHeader";
 import Footer from "../components/layouts/footer";
 import Header1 from "../components/layouts/NewHeader";
+import Footer1 from "../components/layouts/NewFooter";
 
 // export const config: TemplateConfig = {
 //   stream: {
@@ -217,7 +218,7 @@ const Locator: Template<TemplateRenderProps>= ({
       {/* </PageLayout> */}
       </AnalyticsScopeProvider>
       </AnalyticsProvider>
-      <Footer _site={_site}/>
+      <Footer1 _site={_site}/>
     </>
   );
 };

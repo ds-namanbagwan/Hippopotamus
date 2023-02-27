@@ -9,7 +9,10 @@
   "fields": [
     "name",
     "c_headerlogo",
-    "c_headerlable"
+    "c_headerlable",
+    "c_footerphoto",
+    "c_footerlable",
+    "c_banner1"
   ],
   "localization": {
     "locales": [

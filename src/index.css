@@ -128,7 +128,7 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 .search-bx button.useMyLocation {@apply text-dark-gray flex items-center font-second-main-font text-lg}
 .search-bx button.useMyLocation .icon{@apply mr-1.5}
 .search-field{@apply flex relative  }
-.search-bx .search-btn{@apply absolute top-0 rounded-none right-0  text-white p-2 w-2/12 h-12 text-center bg-cookies-link}  
+.search-bx .search-btn{@apply absolute top-0 rounded-none right-0  text-white p-2 w-2/12 h-12 text-center bg-red}  
 .search-bx .search-btn svg{ @apply mx-auto}
 .search-field input{@apply  w-full bg-white h-12 text-dark-gray placeholder:text-dark-gray  py-2 pr-20 sm:py-4 sm:pr-40 pl-4 leading-7  text-[1.0625rem] font-main-font  border border-[#8c8c8c] rounded-none }
 .location p{ @apply mr-2 absolute rounded-lg -left-4 top-[0px] sm:top-[2px] xl:top-1}
@@ -232,7 +232,7 @@ table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rou
   @apply relative pr-0 md:pr-[6.25rem] leading-5 mb-2.5 flex !flex-row justify-between items-center md:flex-col 
 }
 .location-name-miles h2{  @apply text-3xl md:text-lg leading-[1.375rem] text-red md:leading-tight}
-.location-name-miles h2 a{ @apply text-[1.375rem] text-cookies-link font-second-main-font}
+.location-name-miles h2 a{ @apply text-[1.375rem] text-red font-second-main-font}
 
 .location-name-miles .distance{
   @apply sm:absolute sm:-top-0.5 right-0 text-base md:text-lg mt-1 sm:mt-0
@@ -347,7 +347,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .address-main-sec{@apply bg-address-bg px-4 md:px-6 py-4 md:py-6 w-full md:w-[48%]  lg:w-[24.8125rem] relative z-[0] md:mr-4 order-2 md:order-none mt-4 md:mt-4 lg:mt-0; } 
 .address-main-sec .address-text{ @apply text-lg md:text-lg}
 .address-main-sec .map-sec{ @apply block h-72 -ml-4 w-[100vw] md:hidden}
-.box-title{@apply font-second-main-font text-[1.3125rem] md:text-[1.375rem] mb-4}
+.box-title{@apply font-second-main-font text-[1.3125rem] md:text-[1.5rem] mb-4 font-bold}
 .title-with-link{@apply flex justify-between items-center mb-4}
 .title-with-link .box-title{ @apply mb-0}
 .title-with-link-1{@apply flex justify-between items-center mb-4}
@@ -644,4 +644,6 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   .storelocation-openCloseTime table.day-hrs .currentDay .dayName .checked{@apply left-1}
 }
 
+
+/*image */
 

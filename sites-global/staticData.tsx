@@ -1,4 +1,5 @@
 export const StaticData = {
+    Button:"I ORDER TO TAKE AWAY",
     Subhead:"Find Your Nearest Restaurant",
     Searchbox:"TO Find",
     Meta_title:" Matalan Demo Store - Online Clothes Store",
@@ -17,7 +18,7 @@ export const StaticData = {
     Minutes:"Minutes",
     Seconds:"Seconds",
     FAQheading:"How can we help ?",
-    getDirection:"Directions",
+    getDirection:"GETTING THERE",
     AllRegion:"All Regions of",
     NearStoretext:"NEARBY LOCATIONS",
     AllLocationtext:"View All Location",

@@ -57,10 +57,11 @@ function opentime(e: any) {
       <div className="result-inner ">
         <div className="center-column">
           <div className="lp-param-results lp-subparam-hours">
-            <div className="location-name-miles icon-row">
-              <div className="icon text-black relative"> <img className=" " src={redmapimage} width="20" height="20"
-                alt={''} /><span className="map-count"></span></div>
-              <h2><Link className="inline-block notHighlight"
+            <div className="location-name-miles icon-row" >
+              <div className="icon text-black relative"> 
+              {/* <img className=" " src={redmapimage} width="20" height="20"alt={''} /> */}
+                <span className="map-count"></span></div>
+              <h2 style={{fontWeight:"bold"}}><Link className="inline-block notHighlight"
                data-ya-track={`viewDetail -${result.rawData.name}`}
                eventName={`viewDetail -${result.rawData.name}`}
                rel="noopener noreferrer"
