@@ -55,6 +55,7 @@ import OpenClose1 from "../components/commons/openClose1";
 import About1 from "../components/locationDetail/About1";
 import Photo from "../components/layouts/Photo";
 import Service from "../components/layouts/Services";
+import Banner1 from "../components/locationDetail/Banner1";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -247,7 +248,7 @@ export const transformProps: TransformProps<ExternalApiData> = async (
 
   var location = `${data.document.yextDisplayCoordinate ? data.document.yextDisplayCoordinate.latitude : data.document.displayCoordinate.latitude},${data.document.yextDisplayCoordinate ? data.document.yextDisplayCoordinate.longitude : data.document.displayCoordinate.longitude}`;
 
-  const url = `${AnswerExperienceConfig.endpoints.verticalSearch}?experienceKey=${AnswerExperienceConfig.experienceKey}&api_key=${AnswerExperienceConfig.apiKey}&v=20220511&version=${AnswerExperienceConfig.experienceVersion}&locale=${AnswerExperienceConfig.locale}&location=${location}&locationRadius=${AnswerExperienceConfig.locationRadius}&verticalKey=${AnswerExperienceConfig.verticalKey}&limit=4&retrieveFacets=true&skipSpellCheck=false&sessionTrackingEnabled=true&source=STANDARD`;
+  const url = `${AnswerExperienceConfig.endpoints.verticalSearch}?experienceKey=${AnswerExperienceConfig.experienceKey}&api_key=${AnswerExperienceConfig.apiKey}&v=20220511&version=${AnswerExperienceConfig.experienceVersion}&locale=${AnswerExperienceConfig.locale}&location=${location}&locationRadius=${AnswerExperienceConfig.locationRadius}&verticalKey=${AnswerExperienceConfig.verticalKey}&limit=7&retrieveFacets=true&skipSpellCheck=false&sessionTrackingEnabled=true&source=STANDARD`;
   console.log(url)
   const externalApiData = (await fetch(url).then((res: any) =>
     res.json()
@@ -477,6 +478,7 @@ const Location: Template<ExternalApiRenderData> = ({
           {/* <PageLayout global={_site}> */}
 
           <Header1 _site={_site} />
+          <Banner1 _site={_site.c_banner1} />
           <div className="container">
             <div className='banner-text banner-dark-bg justify-center text-center'>
               {/* <h1 className="">{name} {name}</h1> */}
@@ -531,15 +533,24 @@ const Location: Template<ExternalApiRenderData> = ({
             </div>
           </div>
 
-          <div className="nearby-sec">
+          <div className="nearby-sec" >
             <div className="container">
-              <div className="sec-title"><h2 className="">{StaticData.NearStoretext}</h2></div>
-              <div className="nearby-sec-inner">
+              <div className="sec-title">
+                <h2 className="">{StaticData.NearStoretext}</h2></div>
+              <div className="nearby-sec-inner " style={{ backgroundImage: "url('https://a.mktgcdn.com/p/rBHrewBMJP_xhVRcYKPETWQC_Y8rjGGrCXttn-fo4uA/600x375.jpg')" }}>
                 {yextDisplayCoordinate || cityCoordinate || displayCoordinate ?
-                  <Nearby externalApiData={externalApiData} />
+                  <div className="grid grid-cols-3"><Nearby externalApiData={externalApiData} /></div>
+
                   : ''}
               </div>
             </div>
+
+          </div>
+
+          <div style={{textAlign:"center"}}>
+            <button className="button-bx direction-button"> 
+              <a href="#" style={{padding:"20px"}}>{StaticData.a}</a>
+            </button>
 
           </div>
           <Footer1 _site={_site} />

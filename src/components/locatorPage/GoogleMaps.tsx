@@ -152,7 +152,7 @@ function UnwrappedGoogleMaps({
   const pinStyles = {
     fill: "#da261b", //default google red
     stroke: "#da261b",
-    text: "white",
+    text: "black",
     fill_selected: "#000",
     stroke_selected: "#000",
     text_selected: "#fff",
@@ -218,24 +218,25 @@ function UnwrappedGoogleMaps({
       mapMarkerClusterer.clearMarkers();
     }
   } catch (e) {}
-  let i = 0;
+  let i = 1;
   for (const result of locationResults) {
-    i++;
+    // i++;
     const position = getPosition(result);
     const marker = new google.maps.Marker({
       position,
       map,
       icon: Mapicon2,
-      // label: {
-      //   text: String(i),
-      //   color: "white",
-      // },
+      label: {
+        text: String(i),
+        color: "white",
+      },
       // animation: google.maps.Animation.DROP
     });
 
     const location = new google.maps.LatLng(position.lat, position.lng);
     bounds.extend(location);
     markers1.current.push(marker);
+    i++;
   }
 
   if (markers1.current.length > 0) {
@@ -254,7 +255,7 @@ function UnwrappedGoogleMaps({
             icon: clustericon,
             label: {
               text: String(markers?.length),
-              color: "white",
+              color: "black",
             },
             //  animation: google.maps.Animation.DROP,
           });
@@ -560,11 +561,11 @@ function UnwrappedGoogleMaps({
             </div>
           )}
         </div>
-        <div className="button-bx !ml-4 !mb-0">
-          <a type="button" href={`/${result.rawData.id}`} className="btn">
+        <div className="button-bx ">
+          {/* <a type="button" href={`/${result.rawData.id}`} className="btn">
             {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
-            {StaticData.StoreDetailbtn}
-          </a>
+            {/* {StaticData.StoreDetailbtn} */}
+          {/* </a> */} 
           {result.rawData.displayCoordinate ? (
             <a
               data-listener="false"

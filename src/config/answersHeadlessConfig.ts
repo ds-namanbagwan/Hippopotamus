@@ -1,6 +1,6 @@
 
 export const AnswerExperienceConfig = {
-  limit:3,
+  // limit:3,
   locale: "en",
   apiKey : "654a1060177d58f92706b20333825132",
   verticalKey : "locations",

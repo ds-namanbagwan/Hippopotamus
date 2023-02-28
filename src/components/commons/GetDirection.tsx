@@ -67,7 +67,7 @@ const GetDirection = (props: GetDirection) => {
 
   return (
     <>   
-     <Link
+    <div style={{marginLeft:"-2%",color:"#a61615"}}> <Link
                       data-ya-track="getdirections"
                       eventName={`getdirections`}
                       className="btn notHighligh"
@@ -78,12 +78,13 @@ const GetDirection = (props: GetDirection) => {
                     >
                         {buttonText}
                     </Link>
+                    </div>
     {/* <a
      onClick={getDirectionUrl} className="btn notHighlight" rel="noopener noreferrer" >
-      <div dangerouslySetInnerHTML={{__html: Directionsvg}}/> */}
+      <div dangerouslySetInnerHTML={{__html: Directionsvg}}/>
     
     
-    {/* </a> */}
+    </a> */}
     </>
 
   );

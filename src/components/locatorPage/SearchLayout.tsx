@@ -246,10 +246,10 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
           <div className="for-allow">{allowlocation}</div>
           : ''}
         <div className="search-bx">
-          <div className="location-with-filter">
-            <h1 className="">{StaticData.FindLocationtext}</h1>
+          <div className="location-with-filter" style={{marginTop:"3%",marginLeft:"3%"}}>
+            <h1>{StaticData.FindLocationtext}</h1>
           </div>
-          <div className="flex" style={{width:"35%"}}><p>Enter A Postal Code, City</p></div>
+          <div className="flex" style={{width:"35%",marginLeft:"3%"}}><p>Enter A Postal Code, City</p></div>
 <div style={{marginLeft:"71%",marginBottom:"3%"}}>
           <div className="fliter-sec">
           <button className="useMyLocation" title="Search using your current location!" id="useLocation" onClick={onClick}>

@@ -1,4 +1,5 @@
 export const StaticData = {
+    a:"FIND ANOTHER RESTAURANT",
     Button:"I ORDER TO TAKE AWAY",
     Subhead:"Find Your Nearest Restaurant",
     Searchbox:"TO Find",
@@ -20,7 +21,7 @@ export const StaticData = {
     FAQheading:"How can we help ?",
     getDirection:"GETTING THERE",
     AllRegion:"All Regions of",
-    NearStoretext:"NEARBY LOCATIONS",
+    NearStoretext:"HIPPOPOTAMUS RESTAURANTS NEARBY",
     AllLocationtext:"View All Location",
     PagenotFound:"404 - Page Not Found",
     cantfind_page:"We're really sorry, we can't find the page you're looking for",

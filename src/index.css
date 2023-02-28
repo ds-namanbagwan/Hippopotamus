@@ -101,7 +101,7 @@ body.menu-opened{ @apply overflow-hidden lg:overflow-auto;}
 /* banner sec */
 .banner-sec{ @apply bg-gray-light py-16 mt-4}
 .banner-sec h1{ @apply text-3xl text-center uppercase }
-.locator-main{ @apply  mt-10  align-bottom w-full max-w-[87.5rem] mx-auto px-0 md:px-4 lg:px-6 xl:px-0}
+.locator-main{ @apply  mt-10  align-bottom w-full  mx-auto px-0 md:px-4 lg:px-6 xl:px-0}
 .left-listing{ @apply w-full md:w-[30rem] lg:w-[33.6875rem] float-left }
 .map-section{@apply w-full md:w-[calc(100%_-_30rem)] lg:w-[calc(100%_-_33.6875rem)]  md:pl-8 float-right}
 .locator-map-block{  @apply w-full  h-[80vh] md:h-screen top-0 order-1 lg:order-none z-[99];}
@@ -143,7 +143,7 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 .location .button-bx{  @apply max-w-lg justify-start xl:mx-auto pl-2 flex-row lg:pl-7}
 .result-list .location{ @apply first:mt-0}
 .location .button-bx .btn{@apply w-[9.75rem] bg-Dark-red font-second-main-font text-lg  border-none text-white    }
-.location .button-bx .btn.notHighligh{@apply w-full md:w-[48%] bg-transparent justify-start mt-0  border-none text-black underline  }
+.location .button-bx .btn.notHighligh{@apply w-full md:w-[48%] bg-transparent justify-start mt-0  border-none text-red  }
 .location .button-bx .btn + .btn{  @apply mt-2 ml-2 md:mt-0 hover:no-underline   w-auto }
 .location .button-bx .btn:hover svg{@apply !fill-red }
 .map-count{ @apply absolute text-white left-1/2 -translate-x-1/2 top-2 md:top-1 2xl:top-1 font-second-main-font text-xs }
@@ -157,13 +157,13 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 .location-with-filter h1{@apply text-lg font-normal text-dark-gray my-0 font-second-main-font text-[1.75rem]}
 .list-count{ @apply border-b border-gray-light mb-4 p-2 flex  flex-row items-center}
 .result-inner{@apply p-4 }
-.button-bx{@apply flex flex-col sm:flex-row mt-2.5 justify-around  ml-6}
+.button-bx{@apply  flex-col sm:flex-row mt-2.5 justify-around  ml-6}
 .button-bx .btn{@apply py-1.5 md:py-2  text-center cursor-pointer leading-4 sm:leading-[1.375rem] w-full sm:w-[48%]  
    px-2 transition-all duration-300 hover:bg-hover-btn text-gray-dark
     hover:text-white   border-black border hover:border-transparent  bg-white text-sm md:text-base font-medium flex items-center justify-center  }
 .button-bx .btn + .btn{  @apply mt-2 sm:mt-0}     
 .button-bx .btn:hover svg{@apply fill-white  }
-.scrollbar-container{@apply md:pr-3 md:!h-[calc(100vh_-_11rem)]}
+.scrollbar-container{@apply md:pr-3 md:!h-[calc(100vh_-_16rem)]}
 .scrollbar-container.ps--active-y{ @apply pr-6}
 body .ps:hover .ps__rail-y{@apply opacity-100}
 body .ps__rail-y{ @apply opacity-100 mt-4 !bg-gray-light w-4}
@@ -265,7 +265,7 @@ table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rou
 .gm-style .gm-style-iw-c{@apply !rounded-none }
 .gm-style-iw-d .button-bx{@apply !justify-start flex-row }
 .gm-style-iw-d .button-bx .getdirection{@apply !bg-transparent !text-gray underline }
-.gm-style-iw-d .button-bx .getdirection1{@apply !bg-transparent  !text-gray underline }
+.gm-style-iw-d .button-bx .getdirection1{@apply !bg-transparent  !text-red ml-16  }
 
 .info-window-content{@apply flex   justify-between}
 .info-window-content .address{ @apply w-2/3 }
@@ -453,12 +453,12 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .nearby-sec{@apply bg-transparent md:bg-light-grey w-full pt-7 pb-0 md:py-[3.75rem] }
 .nearby-sec-inner{@apply sm:mx-auto sm:max-w-[33.5rem] lg:mx-auto lg:max-w-none flex flex-col lg:flex-row gap-4 justify-center pb-0 xl:pb-0 }
 .nearby-sec .splide__slide{@apply xl:px-4}
-.nearby-card{@apply w-full bg-white overflow-hidden  z-10 relative shadow-sm last:mb-0 lg:last:mb-6  mb-6 lg:mt-6  lg:relative p-3 md:p-5 border border-box-border
+.nearby-card{@apply w-full  overflow-hidden  z-10 relative shadow-sm last:mb-0 lg:last:mb-6  mb-6 lg:mt-6  lg:relative p-3 md:p-5 
 }
 .nearby-card .red-dot{ @apply !justify-start}
 .nearby-card .icon-row{ @apply pl-0}
 .nearby-card .OpenDot{ @apply  font-second-main-font  text-lg}
-.nearby-card h2 a{ @apply font-second-main-font  !text-lg text-black }
+.nearby-card h2 a{ @apply font-second-main-font  !text-lg text-red }
 .nearby-card .distance{ @apply absolute right-0 md:right-2 top-0 md:-top-0.5}
 .near-address{ @apply flex mt-2 items-start min-h-[90px]}
 .nearby-card .address { @apply text-lg }
@@ -646,4 +646,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 
 
 /*image */
-
+.findrestro .direction-button{
+  margin-top:-30px!important;
+}
+.direction-button1{@apply  !text-white  !border-button-light hover:!border-transparent !border-2 }

@@ -181,7 +181,7 @@ const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
 
     return (
       <div className={cssClasses.container}>
-        <InputDropdown
+        <InputDropdown        
           inputValue={input}
           setSearchInputValue={setSearchInputValue}
           displaymsg={displaymsg}
@@ -201,7 +201,7 @@ const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
           cssClasses={cssClasses}
           handleSetUserShareLocation={handleSetUserShareLocation}
           handleInputValue={handleInputValue}
-        >
+         >
           {sections.map((section, sectionIndex) => {
             const sectionId = section.label
               ? `${section.label}-${sectionIndex}`
