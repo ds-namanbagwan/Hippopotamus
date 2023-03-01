@@ -101,7 +101,7 @@ body.menu-opened{ @apply overflow-hidden lg:overflow-auto;}
 /* banner sec */
 .banner-sec{ @apply bg-gray-light py-16 mt-4}
 .banner-sec h1{ @apply text-3xl text-center uppercase }
-.locator-main{ @apply  mt-10  align-bottom w-full  mx-auto px-0 md:px-4 lg:px-6 xl:px-0}
+.locator-main{ @apply  mt-10  align-bottom w-full max-w-[87.5rem] mx-auto px-0 md:px-4 lg:px-6 xl:px-0}
 .left-listing{ @apply w-full md:w-[30rem] lg:w-[33.6875rem] float-left }
 .map-section{@apply w-full md:w-[calc(100%_-_30rem)] lg:w-[calc(100%_-_33.6875rem)]  md:pl-8 float-right}
 .locator-map-block{  @apply w-full  h-[80vh] md:h-screen top-0 order-1 lg:order-none z-[99];}
@@ -370,7 +370,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .direction-button .btn:hover svg{@apply !fill-red }
 .opennow-sec.deactive-feci{@apply opacity-70 text-red }
 .address-main-sec .button-bx{  @apply mt-5 justify-start ml-0 md:ml-0}
-.address-main-sec .button-bx .btn{  @apply min-w-[10.25rem] w-40 py-3 uppercase font-second-main-font !border-none hover:!bg-hover-btn leading-5  md:w-auto  }
+.address-main-sec .button-bx .btn{  @apply min-w-[10.25rem] w-40 py-3 uppercase font-second-main-font !border-none hover:!bg-red leading-5  md:w-auto  }
 .availability-col{  @apply mt-4  mb-0 pl-0    !flex-row flex-wrap}
 .map-sec{  @apply  hidden md:block w-full mt-5 lg:mt-0  h-[25rem] lg:h-auto  lg:w-[calc(100%_-_51.625rem)]}
 .map-sec.without-hours{  @apply md:w-[48%] md:mt-0 lg:w-[calc(100%_-_26rem)]}
@@ -649,4 +649,6 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .findrestro .direction-button{
   margin-top:-30px!important;
 }
-.direction-button1{@apply  !text-white  !border-button-light hover:!border-transparent !border-2 }
+.direction-button1{@apply  !text-white  !border-red bg-red !border-2 }
+.direction-button2{@apply  !text-white  !border-gray bg-gray !border-2 }
+.direction-button4{@apply  !text-drak-green  !border-red !border-2}

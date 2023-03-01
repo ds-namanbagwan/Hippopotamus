@@ -38,6 +38,7 @@ module.exports = {
       'box-border': '#cccccc',
       'dark-gray': '#333333',
       'hover-border': '#d8d8d8',
+      'drak-green':'#746755'
     },
 
     fontFamily: {

@@ -33,7 +33,7 @@ export default function Footer1(data:props) {
         
         </div>
       </div>
-      <div style={{marginLeft:"39%"}}>
+      <div style={{marginLeft:"40%"}}>
         <img src={data?._site?.c_footerphoto?.image.url} width="290"/>
         </div>
     </>

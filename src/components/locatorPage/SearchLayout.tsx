@@ -80,8 +80,8 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
       );
     }
     params1 = {
-      latitude: 54.9191,
-      longitude: -1.3692,
+      latitude: 48.864716,
+      longitude: 2.349014,
     };
     SetNewparam(params1);
     // mapzoom=8;
@@ -246,11 +246,11 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
           <div className="for-allow">{allowlocation}</div>
           : ''}
         <div className="search-bx">
-          <div className="location-with-filter" style={{marginTop:"3%",marginLeft:"3%"}}>
+          <div className="location-with-filter">
             <h1>{StaticData.FindLocationtext}</h1>
           </div>
-          <div className="flex" style={{width:"35%",marginLeft:"3%"}}><p>Enter A Postal Code, City</p></div>
-<div style={{marginLeft:"71%",marginBottom:"3%"}}>
+          <div className="flex"><p>Enter A Postal Code, City</p></div>
+<div className="ml-[71%] mb-[3%]">
           <div className="fliter-sec">
           <button className="useMyLocation" title="Search using your current location!" id="useLocation" onClick={onClick}>
               <span className="icon" dangerouslySetInnerHTML={{ __html: UseMylocationsvg }} />
@@ -286,10 +286,10 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
                   entityType: "location",
                   fieldApiName: "address.postalCode",
 
-                  },
-                  {
-                    entityType: "location",
-                    fieldApiName: "name",
+                },
+                {
+                  entityType: "location",
+                  fieldApiName: "name",
 
                 },
                 {
@@ -301,12 +301,16 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
                   entityType: "location",
                   fieldApiName: "address.region",
 
-                  },
-                  // {
-                  //   entityType: "location",
-                  //   fieldApiName: "address.countryCode",
-
-                  // },
+                },
+                {
+                  entityType: "location",
+                  fieldApiName: "address.line2",
+                },
+                {
+                  entityType: "location",
+                  fieldApiName: "address.countryCode",
+                }
+                 
                 ]}
                 
                 handleInputValue={handleInputValue}  

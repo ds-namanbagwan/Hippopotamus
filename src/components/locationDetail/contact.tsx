@@ -66,14 +66,13 @@ const Contact = (props: any) => {
               latitude={latitude}
               longitude={longitude}
             />
-          </li>
+            
+          </li>         
         </ul>
 
-        <ul className="">
-          <li className="button-bx direction-button">
-            {StaticData.Button}
-          </li>
-        </ul>
+       
+        
+       
 
         <div className="map-sec">
           <CustomMap prop={yextDisplayCoordinate} />

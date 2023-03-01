@@ -3,12 +3,9 @@ import '@splidejs/react-splide/css';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 export default function Banner1(props: any) {
-    console.log(props._site, "ahdfhahdshicgvcf")
+    console.log(props, "ahdfhahdshicgvcf")
     return <>
-        {/* {console.log(props._site,"ahdfhahdshicgvcf")}  */}
-        {props?._site?.map((button: any) => {
-            return (
-                <>
+        
                     <div style={{ position: "relative" }}>
                         <div style={{
                             position: "absolute",
@@ -17,31 +14,19 @@ export default function Banner1(props: any) {
                             backgroundColor: "rgba(0,0,0,0.6)"
                         }}>
                         </div>
-                        <img src={button.photo.image.url} style={{
+                        <img src={props.props.bannerimage.image.url} style={{
                             width: "100%", height: "300px",
                             objectFit: "cover", objectPosition: "center"
                         }} />
 
-                        <div className="" style={{position:"absolute",top:"0"}}> 
-                            <p style={{ color:"#fff", fontSize: "3rem" }}>{button.photo.description}</p>
-
-                            
-                                {button?.button?.map((btn: any) => {
-                                    return (
-                                        <>
-                                            <button className="button-bx direction-button1"><a href="#" style={{padding:"20px"}}>{btn.label}</a></button>
-                                        </>
-                                    )
-                                }
-                                )}
+                        <div className="absolute text-center top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4">
+                           <p className="text-[40px] text-[#fff]"><h1>{props.props.name}</h1></p>
+                           <button className="direction-button1 p-[9px] mt-[40px] ml-[inherit]"><a>{props.props.button1.label}</a></button>
+                           <button className="direction-button2 p-[9px] mt-[40px] ml-[10px]"><a>{props.props.button2.label}</a></button>     
                             </div>
-                        </div>
-                                   </>
-
-            )
-        }
-
-        )}
+                        
+                    </div>
+              
 
     </>
 

@@ -56,6 +56,7 @@ import About1 from "../components/locationDetail/About1";
 import Photo from "../components/layouts/Photo";
 import Service from "../components/layouts/Services";
 import Banner1 from "../components/locationDetail/Banner1";
+import SocialData from "../components/locationDetail/socialData";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -81,7 +82,12 @@ export const config: TemplateConfig = {
       "c_about",
       "photoGallery",
       "c_service",
-      "c_photo"
+      "c_photo",
+      "c_banner",
+      "c_yearimage",
+      "c_textSocial",
+      "c_socialIcon",
+      "c_socialReceiveText"
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -170,22 +176,11 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: "noindex, nofollow",
         },
       },
-
-      // {
-      //   type: "link",
-      //   attributes: {
-      //     rel: "canonical",
-      //     // href: `${document._site.c_canonical?document.c_canonical:stagingBaseurl
-
-      //       }${document.slug?document.slug:`${document.name.toLowerCase()}`}.html`,
-      //   },
-      // },
-
       {
         type: "meta",
         attributes: {
           property: "og:description",
-          content: `${document.c_meta_description ? document.c_meta_description : `Find the ${document.name} Timber Store in ${document.address.city}. We stock high-quality, robust products at competitive rates.`}`,
+          content: "HIPPOPOTAMUS",
         },
       },
       {
@@ -288,7 +283,12 @@ const Location: Template<ExternalApiRenderData> = ({
     name,
     c_about,
     c_service,
-    c_photo
+    c_photo,
+    c_banner,
+    c_yearimage,
+    c_textSocial,
+    c_socialIcon,
+    c_socialReceiveText
 
   } = document;
 
@@ -478,7 +478,7 @@ const Location: Template<ExternalApiRenderData> = ({
           {/* <PageLayout global={_site}> */}
 
           <Header1 _site={_site} />
-          <Banner1 _site={_site.c_banner1} />
+          <Banner1 props={c_banner} />
           <div className="container">
             <div className='banner-text banner-dark-bg justify-center text-center'>
               {/* <h1 className="">{name} {name}</h1> */}
@@ -547,12 +547,17 @@ const Location: Template<ExternalApiRenderData> = ({
 
           </div>
 
-          <div style={{textAlign:"center"}}>
-            <button className="button-bx direction-button"> 
-              <a href="#" style={{padding:"20px"}}>{StaticData.a}</a>
+          <div style={{ textAlign: "center" }}>
+            <button className="button-bx direction-button">
+              <a href="#" style={{ padding: "20px" }}>{StaticData.a}</a>
             </button>
-
           </div>
+
+          <div>
+            <SocialData c_socialIcon={c_socialIcon} c_socialReceiveText={c_socialReceiveText} c_yearimage={c_yearimage} c_textSocial={c_textSocial} />
+          </div>
+
+
           <Footer1 _site={_site} />
           {/* </PageLayout> */}
         </AnalyticsScopeProvider>

@@ -93,29 +93,19 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
       },
     },
 
-    //  {
-    //    type: "link",
-    //    attributes: {
-    //      rel: "canonical",
-    //      href: `${
-    //        document._site.c_canonical?document.c_canonical:stagingBaseurl
-            
-    //      }`,
-    //    },
-    //  },
  
      {
        type: "meta",
        attributes: {
          property: "og:description",
-         content: `${document.c_meta_description?document.c_meta_description:`View Timber Merchants near you today at MGM Timber. We stock high-quality, robust products at competitive rates.`}`,
+         content: "HIPPOPOTAMUS",
        },
      },
      {
        type: "meta",
        attributes: {
          property: "og:title",
-         content: `${document.c_meta_title?document.c_meta_title:`Timber Merchants Near Me - Find MGM Timber Branch Locator Here.`}`,
+         content: "HIPPOPOTAMUS",
        },
      },
      {
