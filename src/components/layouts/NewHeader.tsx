@@ -5,7 +5,7 @@ type props = {
 }
 export default function Header1(data: props) {
 
-  console.log(data, "_site")
+  // console.log(data, "_site")
   return (
     <>
     <div className="container-fluid">

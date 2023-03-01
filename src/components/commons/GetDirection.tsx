@@ -41,7 +41,7 @@ const GetDirection = (props: GetDirection) => {
       };
       navigator.geolocation.getCurrentPosition(
         function (position) {
-          console.log("current lat lang");
+          // console.log("current lat lang");
           let currentLatitude = position.coords.latitude;
           let currentLongitude = position.coords.longitude;
           let getDirectionUrl =

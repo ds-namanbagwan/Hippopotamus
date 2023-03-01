@@ -244,7 +244,7 @@ export const transformProps: TransformProps<ExternalApiData> = async (
   var location = `${data.document.yextDisplayCoordinate ? data.document.yextDisplayCoordinate.latitude : data.document.displayCoordinate.latitude},${data.document.yextDisplayCoordinate ? data.document.yextDisplayCoordinate.longitude : data.document.displayCoordinate.longitude}`;
 
   const url = `${AnswerExperienceConfig.endpoints.verticalSearch}?experienceKey=${AnswerExperienceConfig.experienceKey}&api_key=${AnswerExperienceConfig.apiKey}&v=20220511&version=${AnswerExperienceConfig.experienceVersion}&locale=${AnswerExperienceConfig.locale}&location=${location}&locationRadius=${AnswerExperienceConfig.locationRadius}&verticalKey=${AnswerExperienceConfig.verticalKey}&limit=7&retrieveFacets=true&skipSpellCheck=false&sessionTrackingEnabled=true&source=STANDARD`;
-  console.log(url)
+  // console.log(url)
   const externalApiData = (await fetch(url).then((res: any) =>
     res.json()
 
@@ -357,7 +357,7 @@ const Location: Template<ExternalApiRenderData> = ({
             j.meta.entityType.id != "ce_city" &&
             j.meta.entityType.id != "ce_root"
           ) {
-            console.log(j, "j");
+            // console.log(j, "j");
             url = url + j.slug;
           }
         });
@@ -380,7 +380,7 @@ const Location: Template<ExternalApiRenderData> = ({
             j.meta.entityType.id != "ce_city" &&
             j.meta.entityType.id != "ce_root"
           ) {
-            console.log(j, "j");
+            // console.log(j, "j");
             url = url + "/" + j.slug;
           }
         });
@@ -411,7 +411,7 @@ const Location: Template<ExternalApiRenderData> = ({
     return <> {element.image.url}
     </>
   }) : null;
-  console.log(document)
+  // console.log(document)
   let bannerimage = c_banner_image && c_banner_image.image.url;
   let image = photoGallery.map((img: any) => {
     return <>

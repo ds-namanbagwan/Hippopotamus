@@ -243,7 +243,7 @@ const City: Template<TemplateRenderProps> = ({
   });
 
   const childrenDivs = dm_directoryChildren.map((entity: any) => {
-    console.log(entity)
+    // console.log(entity)
     var origin: any = null;
     if (entity.address.city) {
       origin = entity.address.city;

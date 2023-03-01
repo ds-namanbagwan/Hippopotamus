@@ -147,7 +147,7 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
     if(searchKey[0].value!=""){
     getCoordinates(Search);
     }
-    console.log(locationinbuit.length,"fisttimedispaly")
+    // console.log(locationinbuit.length,"fisttimedispaly")
     if(locationinbuit.length==0){
       setDisplaymsg(true)
     }else { 
@@ -159,7 +159,7 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
     setInputValue('');
   }
   const handleSetUserShareLocation = (value:any, userShareStatus:boolean) => {
-    console.log(value,center_latitude,center_longitude,"value");
+    // console.log(value,center_latitude,center_longitude,"value");
     setInputValue(value);
     if(userShareStatus){
       setCenterLatitude(center_latitude);
@@ -201,7 +201,7 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
     }
     },[locationinbuit])
     useEffect(()=>{
-      console.log("yes rerender")
+      // console.log("yes rerender")
       locationResults.map((result:any, index:number) => {
         const resultelement = document.querySelectorAll(
           `.result-list-inner-${index + 1}`

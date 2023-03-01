@@ -55,7 +55,7 @@ return a.map(format).join(s);
 
  /* a = [ {day: '2-digit'},{month: 'numeric'},{year: 'numeric'}];
   s = join(new Date(), a, '-');  
-  console.log(new Date(join(new Date(res.date), a, '-')).getTime(),new Date(s).getTime())
+  // console.log(new Date(join(new Date(res.date), a, '-')).getTime(),new Date(s).getTime())
       if(new Date(join(new Date(res.date), a, '-')).getTime()>=new Date(s).getTime()){
 */
 

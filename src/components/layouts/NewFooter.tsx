@@ -5,7 +5,7 @@ type props = {
 }
 export default function Footer1(data:props) {
 
-  console.log(data,"_site")
+  // console.log(data,"_site")
   return (
     <>
       <div style={{marginTop:"48px",

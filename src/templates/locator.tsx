@@ -155,7 +155,7 @@ const Locator: Template<TemplateRenderProps>= ({
    _site
    } = document;
  
-   console.log(_site,"Mrigank");
+  //  console.log(_site,"Mrigank");
 
   let templateData = { document: document, __meta: __meta };
   const endpoints =  {

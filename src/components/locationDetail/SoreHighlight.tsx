@@ -18,7 +18,7 @@ export default function StoreHighlight(props: any) {
 
                 {
                     props.c_storeHighlightInfo.map((res: any, i: Number) => {
-                        console.log(res, "storehighlight")
+                        // console.log(res, "storehighlight")
 
                         return (
                             <>

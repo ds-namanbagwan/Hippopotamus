@@ -1,7 +1,7 @@
 import * as React from "react";
 
 function Menu(props:any){
-    console.log(props.c_matalanMenu.c_matalanMenu)
+    // console.log(props.c_matalanMenu.c_matalanMenu)
     return(
         <>
       <div className="nav-section">

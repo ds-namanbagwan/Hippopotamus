@@ -6,7 +6,7 @@ import { CSSTransition } from "react-transition-group";
 import { humburgerIcon, logo } from "../../../sites-global/global";
 
 const Nav = (props: any) => {
-console.log(props)
+// console.log(props)
   React.useEffect(() => {
     document.body.setAttribute("id", "body");
   })

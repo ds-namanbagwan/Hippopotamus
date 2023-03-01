@@ -3,7 +3,7 @@ import '@splidejs/react-splide/css';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 export default function Banner1(props: any) {
-    console.log(props, "ahdfhahdshicgvcf")
+    // console.log(props, "ahdfhahdshicgvcf")
     return <>
         
                     <div style={{ position: "relative" }}>

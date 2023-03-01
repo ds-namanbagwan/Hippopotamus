@@ -5,7 +5,7 @@ import { useEffect } from "react";
     return(
      <>
       {props.hours.map((res:any,index:Number)=>{
-          console.log(res.isClosed)
+          // console.log(res.isClosed)
        const weeks=[
          "Sunday",
          "Monday",
@@ -38,7 +38,7 @@ import { useEffect } from "react";
             <div className="pop-up-holyhrs">
                 <div>{join(new Date(res.date), a, '-') }</div>         
                 <div>{weeks[day]}</div> 
-                {console.log(res)}  
+                {/* {console.log(res)}   */}
                 {res.isClosed?<span className="cl-time">
                       Closed
                     </span>:<>   

@@ -2,10 +2,10 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 
 export default function MgmTimber(props:any){
-    console.log(props.c_mGMInformation,"c_mGMInformation")
+    // console.log(props.c_mGMInformation,"c_mGMInformation")
     const [title,setTitle]=useState('');
     const getactiveimage=(e:any)=>{
-       console.log(e,"event")
+    //    console.log(e,"event")
        setTitle(e);
     }
     useEffect(()=>{

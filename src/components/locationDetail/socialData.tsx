@@ -8,7 +8,7 @@ type data = {
 }
 function SocialData(data: any) {
     const { c_socialIcon, c_socialReceiveText, c_yearimage, c_textSocial } = data
-    console.log("tyus,", c_textSocial)
+    // console.log("tyus,", c_textSocial)
 
     return (
         <>

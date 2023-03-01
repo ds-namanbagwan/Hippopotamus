@@ -2,7 +2,7 @@ import * as React from "react";
 import Link from "../commons/Link";
 
 function Menu(props: any) {
-  console.log(props.c_matalanMenu)
+  // console.log(props.c_matalanMenu)
   return (
     <>
       <ul className="primary-nav">

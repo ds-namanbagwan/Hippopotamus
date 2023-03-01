@@ -2,7 +2,7 @@ import * as React from "react"
 import { Props } from "react-phone-number-input"
 
 export default function About1(data: any) {
-    console.log(data, "whyfdg")
+    // console.log(data, "whyfdg")
 
     return (
         <>

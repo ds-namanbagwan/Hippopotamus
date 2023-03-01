@@ -31,7 +31,7 @@ import { useState } from "react";
         }
       } catch (err) {
         setStatus("ERROR")
-        console.log(err)
+        // console.log(err)
       }
     }
   

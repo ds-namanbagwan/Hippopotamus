@@ -54,7 +54,7 @@ const Footer = (props: any) => {
 							</div>
 							
 						{/* {data.c_store_finder.map((storfinder: any) => {
-							console.log(storfinder)
+							// console.log(storfinder)
 							return (
 								<>
 									<div className="store-inner">

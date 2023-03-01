@@ -143,7 +143,7 @@ export default function InputDropdown({
 
     const childProps = child.props as DropdownSectionProps;
     const modifiedOptions = childProps.options.map((option) => {
-      console.log(option,"children")
+      // console.log(option,"children")
       const modifiedOnSelect = () => {
         setSearchInputValue("");
         setLatestUserInput(option.value);
@@ -161,7 +161,7 @@ export default function InputDropdown({
     };
 
     if (focusedSectionIndex === currentSectionIndex) {
-      console.log(focusedSectionIndex, currentSectionIndex);
+      // console.log(focusedSectionIndex, currentSectionIndex);
       return React.cloneElement(child, {
         onLeaveSectionFocus,
         options: modifiedOptions,
