@@ -34,7 +34,7 @@ export default function Footer1(data:props) {
         </div>
       </div>
       <div className="ml-[40%] w-72">
-        <img src={data?._site?.c_footerphoto?.image.url}/>
+        <img src={data?._site?.c_footerphoto?.image.url} alt=""/>
         </div>
     </>
   )

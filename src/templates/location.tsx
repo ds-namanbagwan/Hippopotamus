@@ -415,7 +415,7 @@ const Location: Template<ExternalApiRenderData> = ({
   let bannerimage = c_banner_image && c_banner_image.image.url;
   let image = photoGallery.map((img: any) => {
     return <>
-      <img src={img.image.url} />
+      <img src={img.image.url}  alt=""/>
 
       <div style={{
         fontWeight: "bold", fontFamily: "Bebas Neue", color: "#373a3c", fontSize: "1.55rem",
@@ -428,7 +428,7 @@ const Location: Template<ExternalApiRenderData> = ({
   let photo = c_photo.map((img: any) => {
     return <>
       <div style={{ marginTop: "4%" }}>
-        <img src={img.url} width="380px" />
+        <img src={img.url} width="380px" alt="" />
       </div>
     </>
   })

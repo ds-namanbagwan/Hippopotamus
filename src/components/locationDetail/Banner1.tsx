@@ -14,7 +14,7 @@ export default function Banner1(props: any) {
                             backgroundColor: "rgba(0,0,0,0.6)"
                         }}>
                         </div>
-                        <img src={props.props.bannerimage.image.url} style={{
+                        <img src={props.props.bannerimage.image.url} alt="" style={{
                             width: "100%", height: "300px",
                             objectFit: "cover", objectPosition: "center"
                         }} />

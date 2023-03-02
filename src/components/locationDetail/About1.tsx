@@ -8,7 +8,7 @@ export default function About1(data: any) {
         <>
             <div className="container">
                 <div className="flex w-full">
-                    <img src={data?.data?.image?.url} />
+                    <img src={data?.data?.image?.url} alt="" />
                     {/* <div className="flex w-full" style={{}}>                        */}
                     <p style={{marginLeft:"0.5%",fontFamily:"fantasy",fontSize:"2rem",color:"#a61615"}}>{data?.data?.head}</p> <br/><br/>                   
                    <div style={{marginTop: "5%",marginRight: "10%",marginLeft:"-10.5%"}}> {data?.data?.desc1}<br/>

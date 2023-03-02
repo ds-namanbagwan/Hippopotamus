@@ -15,7 +15,7 @@ function SocialData(data: any) {
 
             <div className="container mt-[7%] mb-[3%]">
                 <div className="flex w-full justify-center" >
-                    <img src={c_yearimage.url} width="150px" />
+                    <img src={c_yearimage.url} width="150px" alt="" />
                     <p className="mt-[2.5%] ml-[2%] mr-[2%] w-[19%]" style={{
                         fontSize: "16px",
                         fontWeight: "bold", fontFamily: "Roboto"
@@ -23,12 +23,12 @@ function SocialData(data: any) {
                     {c_socialIcon?.map((item: any) => {
                         return (
                             <>
-                                <img src={item.url} width={80} />
+                                <img src={item.url} width={80} alt="" />
                             </>
                         )
                     })}
                     <div className="relative ml-[3%]" >
-                        <img src="https://a.mktgcdn.com/p/tA6P5CMH9AgZt5U5-_SLUn9Ot5l-JISFSgA4ByOphFo/495x240.png" width="200px" />
+                        <img src="https://a.mktgcdn.com/p/tA6P5CMH9AgZt5U5-_SLUn9Ot5l-JISFSgA4ByOphFo/495x240.png" width="200px" alt="" />
                       <div className="text absolute top-2 text-white font-bold ml-[25%] mt-[10%]">{c_socialReceiveText}</div>
 
                     </div>
