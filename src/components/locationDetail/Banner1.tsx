@@ -21,8 +21,8 @@ export default function Banner1(props: any) {
 
                         <div className="absolute text-center top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4">
                            <p className="text-[40px] text-[#fff]"><h1>{props.props.name}</h1></p>
-                           <button className="direction-button1 p-[9px] mt-[40px] ml-[inherit]"><a>{props.props.button1.label}</a></button>
-                           <button className="direction-button2 p-[9px] mt-[40px] ml-[10px]"><a>{props.props.button2.label}</a></button>     
+                           <button className="direction-button1 p-[9px] mt-[40px] ml-[inherit]">{props.props.button1.label}</button>
+                           <button className="direction-button2 p-[9px] mt-[40px] ml-[10px]">{props.props.button2.label}</button>     
                             </div>
                         
                     </div>

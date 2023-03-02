@@ -28,7 +28,7 @@ export default function Header1(data: props) {
             return (
               <>
 
-                <button className="button-bx direction-button4 p-[2%]"><a href="#"> {button.label}</a></button>
+                <button className="button-bx direction-button4 p-[2%]">{button.label}</button>
 
               </>)
           }
