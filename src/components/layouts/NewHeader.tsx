@@ -11,7 +11,7 @@ export default function Header1(data: props) {
     <div className="container-fluid">
       <div className="flex" style={{ boxShadow: "0 2px 4px 0 rgb(0 0 0 / 30%)", alignItems: "center",justifyContent:"space-between" }}>
 
-        <img src={data?._site?.c_headerlogo?.image.url} width="200" />
+        <img className="w-52" src={data?._site?.c_headerlogo?.image.url}/>
         <div className="gap-32 flex ml-6">
           {data?._site?.c_headerlable?.map((res: any) => {
             return (
@@ -28,7 +28,7 @@ export default function Header1(data: props) {
             return (
               <>
 
-                <button className="button-bx direction-button4 p-[2%]"><a href="#">{button.label}</a></button>
+                <button className="button-bx direction-button4 p-[2%]"><a href="#"> {button.label}</a></button>
 
               </>)
           }

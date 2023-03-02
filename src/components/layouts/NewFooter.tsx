@@ -22,7 +22,7 @@ export default function Footer1(data:props) {
             return (
               <>
                 <div className="flex ml-2">
-                  <a href="#"> {res.label}</a>
+                  <a href="#">{res.label}</a>
                   <p>|</p> 
                 </div>
                 
@@ -33,8 +33,8 @@ export default function Footer1(data:props) {
         
         </div>
       </div>
-      <div style={{marginLeft:"40%"}}>
-        <img src={data?._site?.c_footerphoto?.image.url} width="290"/>
+      <div className="ml-[40%] w-72">
+        <img src={data?._site?.c_footerphoto?.image.url}/>
         </div>
     </>
   )

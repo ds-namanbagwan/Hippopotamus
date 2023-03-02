@@ -12,7 +12,7 @@ function Menu(props:any){
              return(
                 <>
                 <li className="-mb-px mr-1 w-full">
-                <a className="" href="#">{item.menuList}</a>
+                <a href="#">{item.menuList}</a>
                 </li>
                 </>
              )
