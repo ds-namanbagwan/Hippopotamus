@@ -14,7 +14,7 @@ import { Address } from "../types/search/locations";
 import { useSearchActions } from "@yext/search-headless-react";
 import { useEffect } from "react";
 import SearchLayout from "../components/locatorPage/SearchLayout";
-import {stagingBaseurl, favicon, AnalyticsEnableDebugging, AnalyticsEnableTrackingCookie} from "../../sites-global/global"
+import { stagingBaseurl, favicon, AnalyticsEnableDebugging, AnalyticsEnableTrackingCookie } from "../../sites-global/global"
 import Newsletter from "../components/locatorPage/Newsletter";
 import { JsonLd } from "react-schemaorg";
 import { StaticData } from "../../sites-global/staticData";
@@ -27,6 +27,7 @@ import Header from "../components/layouts/NewHeader";
 import Footer from "../components/layouts/footer";
 import Header1 from "../components/layouts/NewHeader";
 import Footer1 from "../components/layouts/NewFooter";
+import BreadCrumbs from "../components/layouts/Breadcrumb";
 
 // export const config: TemplateConfig = {
 //   stream: {
@@ -35,7 +36,7 @@ import Footer1 from "../components/layouts/NewFooter";
 //     // directly as props to the default exported function.
 //     fields: [
 //       "name",
-     
+
 //     ],
 //     // Defines the scope of entities that qualify for this stream.
 //     filter: {
@@ -57,120 +58,119 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   path,
   document,
 }): HeadConfig => {
- return {
-   title:`${document.c_meta_title?document.c_meta_title:`Timber Merchants Near Me - Find MGM Timber Branch Locator Here.`}`,
-   charset: "UTF-8",
-   viewport: "width=device-width, initial-scale=1",
-   tags: [
-     {
-       type: "meta",
-       attributes: {
-         name: "description",
-         content: `${document.c_meta_description?document.c_meta_description:`View Timber Merchants near you today at MGM Timber. We stock high-quality, robust products at competitive rates.`}`,
-       },
-     },
+  return {
+    title: "HIPPOPOTAMUS",
+    charset: "UTF-8",
+    viewport: "width=device-width, initial-scale=1",
+    tags: [
+      {
+        type: "meta",
+        attributes: {
+          name: "description",
+          content: "HIPPOPOTAMUS",
+        },
+      },
 
-     {
-       type: "meta",
-       attributes: {
-         name: "author",
-         content: StaticData.Brandname,
-       },
-     },
+      {
+        type: "meta",
+        attributes: {
+          name: "author",
+          content: StaticData.Brandname,
+        },
+      },
 
-     {
-       type: "meta",
-       attributes: {
-         name: "robots",
-         content: "noindex, nofollow",
-       },
-     },
-     {
-      type: "link",
-      attributes: {
-        rel: "shortcut icon",
-        href: favicon,
+      {
+        type: "meta",
+        attributes: {
+          name: "robots",
+          content: "noindex, nofollow",
+        },
       },
-    }, 
-     {
-       type: "meta",
-       attributes: {
-         property: "og:description",
-         content: "HIPPOPOTAMUS",
-       },
-     },
-     {
-       type: "meta",
-       attributes: {
-         property: "og:title",
-         content: "HIPPOPOTAMUS",
-       },
-     },
-     {
-       type: "meta",
-       attributes: {
-         property: "og:image",
-         content: favicon,
-       },
-     },
-     {
-      type: "meta",
-      attributes: {
-        name: "twitter:card",
-        content: "summary",
+      {
+        type: "link",
+        attributes: {
+          rel: "shortcut icon",
+          href: favicon,
+        },
       },
-    },
-    {
-      type: "meta",
-      attributes: {
-        name: "twitter:description",
-        content:`${document.c_meta_description?document.c_meta_description:`View Timber Merchants near you today at MGM Timber. We stock high-quality, robust products at competitive rates.`}`,
+      {
+        type: "meta",
+        attributes: {
+          property: "og:description",
+          content: "HIPPOPOTAMUS",
+        },
       },
-    },
-    {
-      type: "meta",
-      attributes: {
-        name: "twitter:title",
-        content: `${document.c_meta_title?document.c_meta_title:`Timber Merchants Near Me - Find MGM Timber Branch Locator Here.`}`,
+      {
+        type: "meta",
+        attributes: {
+          property: "og:title",
+          content: "HIPPOPOTAMUS",
+        },
       },
-    },
-    {
-      type: "meta",
-      attributes: {
-        name: "twitter:image",
-        content: favicon
+      {
+        type: "meta",
+        attributes: {
+          property: "og:image",
+          content: favicon,
+        },
       },
-    },
-   
-   ],
-   
- };
+      {
+        type: "meta",
+        attributes: {
+          name: "twitter:card",
+          content: "summary",
+        },
+      },
+      {
+        type: "meta",
+        attributes: {
+          name: "twitter:description",
+          content: `${document.c_meta_description ? document.c_meta_description : `View Timber Merchants near you today at MGM Timber. We stock high-quality, robust products at competitive rates.`}`,
+        },
+      },
+      {
+        type: "meta",
+        attributes: {
+          name: "twitter:title",
+          content: `${document.c_meta_title ? document.c_meta_title : `Timber Merchants Near Me - Find MGM Timber Branch Locator Here.`}`,
+        },
+      },
+      {
+        type: "meta",
+        attributes: {
+          name: "twitter:image",
+          content: favicon
+        },
+      },
+
+    ],
+
+  };
 };
 
-const Locator: Template<TemplateRenderProps>= ({
-   document,
-   __meta,
- }) => {
-   const {    
-   _site
-   } = document;
- 
-  //  console.log(_site,"Mrigank");
+const Locator: Template<TemplateRenderProps> = ({
+  document,
+  __meta,
+}) => {
+  const {
+    _site
+  } = document;
 
+  
   let templateData = { document: document, __meta: __meta };
-  const endpoints =  {
+  const endpoints = {
     universalSearch: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/query",
     verticalSearch: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/vertical/query",
     questionSubmission: "https://liveapi-sandbox.yext.com/v2/accounts/me/createQuestion",
     universalAutocomplete: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/autocomplete",
     verticalAutocomplete: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/vertical/autocomplete",
     filterSearch: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/filtersearch",
-   
+
   }
-  var Api="AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18";  
+  var Api = "AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18";
   return (
     <>
-    <JsonLd<locator>
+      <JsonLd<locator>
         item={{
           "@context": "https://schema.org",
           "@type": "Organization",
@@ -179,34 +179,34 @@ const Locator: Template<TemplateRenderProps>= ({
           logo: favicon,
         }}
       />
-          <AnalyticsProvider
+      <AnalyticsProvider
         templateData={templateData}
-        enableDebugging={AnalyticsEnableDebugging} 
+        enableDebugging={AnalyticsEnableDebugging}
         enableTrackingCookie={AnalyticsEnableTrackingCookie}
       >
         {" "}
         <AnalyticsScopeProvider name={""}>
-      {/* <PageLayout global={_site}> */}
-      <Header1 _site={_site}/>
-        <SearchHeadlessProvider
-          experienceKey={AnswerExperienceConfig.experienceKey}
-          locale={AnswerExperienceConfig.locale}
-          apiKey={AnswerExperienceConfig.apiKey}
-          verticalKey={AnswerExperienceConfig.verticalKey}
-          experienceVersion="STAGING"
-          sessionTrackingEnabled={true}
-          endpoints={AnswerExperienceConfig.endpoints}    
-        >
-          
-          <SearchLayout _site={_site}/>
-     
-        </SearchHeadlessProvider>
-      
-   
-      {/* </PageLayout> */}
-      </AnalyticsScopeProvider>
+          {/* <PageLayout global={_site}> */}
+          <Header1 _site={_site} />
+          <SearchHeadlessProvider
+            experienceKey={AnswerExperienceConfig.experienceKey}
+            locale={AnswerExperienceConfig.locale}
+            apiKey={AnswerExperienceConfig.apiKey}
+            verticalKey={AnswerExperienceConfig.verticalKey}
+            experienceVersion="STAGING"
+            sessionTrackingEnabled={true}
+            endpoints={AnswerExperienceConfig.endpoints}
+          >
+
+            <SearchLayout _site={_site} />
+
+          </SearchHeadlessProvider>
+
+
+          {/* </PageLayout> */}
+        </AnalyticsScopeProvider>
       </AnalyticsProvider>
-      <Footer1 _site={_site}/>
+      <Footer1 _site={_site} />
     </>
   );
 };

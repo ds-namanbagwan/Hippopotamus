@@ -225,7 +225,7 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
     <>
 
       {/* {loader} */}
-      {/* <div className="breadcrumb">
+      <div className="breadcrumb">
         <div className="container-custom">
           <ul>
             <li>
@@ -235,7 +235,7 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
           </ul>
 
         </div>
-      </div> */}
+      </div>
 <div style={{marginLeft:"32%",marginTop:"2%"}}>
   <p style={{fontFamily: "Bebas Neue",fontWeight:"bold",fontSize:"270%"}}>{StaticData.Subhead}</p>
 </div>

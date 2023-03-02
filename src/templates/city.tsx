@@ -17,7 +17,7 @@ import {
   HeadConfig,
 } from "@yext/pages";
 import BreadCrumbs from "../components/layouts/Breadcrumb";
-import Banner from "../components/locationDetail/banner";
+import Banner from "../components/locationDetail/Banner";
 import { StaticData } from "../../sites-global/staticData";
 import { Addresssvg, favicon, mobilesvg, regionNames, stagingBaseurl } from "../../sites-global/global";
 import { JsonLd } from "react-schemaorg";
@@ -243,7 +243,7 @@ const City: Template<TemplateRenderProps> = ({
   });
 
   const childrenDivs = dm_directoryChildren.map((entity: any) => {
-    // console.log(entity)
+    console.log(entity)
     var origin: any = null;
     if (entity.address.city) {
       origin = entity.address.city;
@@ -306,13 +306,13 @@ const City: Template<TemplateRenderProps> = ({
            
           </div>
         </div>
-        <div className="icon-row content-col availability-col">
+        {/* <div className="icon-row content-col availability-col">
 
-          {/* <Availability c_openForShoppingAvailibility={entity.c_open_for_shopping}
+          <Availability c_openForShoppingAvailibility={entity.c_open_for_shopping}
            c_clickCollectAvaliability={entity.c_click_collect_availability}
            c_parking_facilities={entity.c_parking_facilities} c_fitting_rooms={entity.c_fitting_rooms}
-            hours={entity.hours} /> */}
-        </div>
+            hours={entity.hours} />
+        </div> */}
 
 
 
@@ -454,7 +454,7 @@ const City: Template<TemplateRenderProps> = ({
           itemListElement: breadcrumbScheme,
         }}
       />
-      {/* <PageLayout global={_site}> */}
+      <PageLayout global={_site}>
         <BreadCrumbs
           name={name}
           address={address}
@@ -474,7 +474,7 @@ const City: Template<TemplateRenderProps> = ({
             </div>
           </div>
         </div>
-      {/* </PageLayout> */}
+      </PageLayout>
     </>
   );
 };

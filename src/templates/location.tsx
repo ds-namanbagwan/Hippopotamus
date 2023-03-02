@@ -109,22 +109,17 @@ export const config: TemplateConfig = {
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  // var url = "";
-  // var name: any = document.name.toLowerCase();
-  // var string: any = name.toString();;
-  // let result: any = string.replaceAll(" ", "-");
-  // document.dm_directoryParents.map((result: any, i: Number) => {
-  //   if (i > 0) {
-  //     url += result.slug + "/"
-  //   }
-  // })
-  // if (!document.slug) {
-  //   url += `${result}.html`;
-  // } else {
-  //   url += `${document.slug.toString()}.html`;
-  // }
+  var url = "";
+  var name: any = document.name.toLowerCase();
+  var string: any = name.toString();;
+  let result: any = string.replaceAll(" ", "-");  
+  if (document.slug) {
+    url = `${result}.html`;
+  } else {
+    url = `${document.slug.toString()}.html`;
+  }
 
-  return document.id;
+  return url;
 };
 /**
  * Defines a list of paths which will redirect to the path created by getPath.
@@ -148,7 +143,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   document,
 }): HeadConfig => {
   return {
-    title: document.c_meta_title ? document.c_meta_title : `${document.name} Store of MGM Timber`,
+    title: document.c_meta_title ? document.c_meta_title : `${document.name}`,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     tags: [
@@ -156,7 +151,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "description",
-          content: `${document.c_meta_description ? document.c_meta_description : `Find the ${document.name} Timber Store in ${document.address.city}. We stock high-quality, robust products at competitive rates.`}`,
+          content: `${document.c_meta_description ? document.c_meta_description : `${document.name} HIPPOPOTAMUS Store in ${document.address.city}. We stock high-quality, robust products at competitive rates.`}`,
         },
       },
 
@@ -467,7 +462,6 @@ const Location: Template<ExternalApiRenderData> = ({
       />
 
 
-
       <AnalyticsProvider
         templateData={templateData}
         enableDebugging={AnalyticsEnableDebugging}
@@ -479,6 +473,7 @@ const Location: Template<ExternalApiRenderData> = ({
 
           <Header1 _site={_site} />
           <Banner1 props={c_banner} />
+         <BreadCrumbs/>
           <div className="container">
             <div className='banner-text banner-dark-bg justify-center text-center'>
               {/* <h1 className="">{name} {name}</h1> */}
