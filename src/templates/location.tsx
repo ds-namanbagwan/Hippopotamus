@@ -427,8 +427,8 @@ const Location: Template<ExternalApiRenderData> = ({
 
   let photo = c_photo.map((img: any) => {
     return <>
-      <div style={{ marginTop: "4%" }}>
-        <img src={img.url} width="380px" alt="" />
+      <div className="text w-[380px] mb-[30px]">
+        <img src={img.url} alt="" />
       </div>
     </>
   })

@@ -15,8 +15,8 @@ export default function Service(props: any) {
                         return (
                             <>
                                 <div className="container">
-                                    <div style={{marginLeft:"160px"}}>
-                                        <img src={s?.serviceimage?.url} width="30%"/>
+                                    <div className="text ml-[30%] w-[40%]">
+                                        <img src={s?.serviceimage?.url} alt=""/>
                                         </div>
                                     
                                     <div className="text-center pt-4" style={{color:"#a61615",fontWeight:"bold"}}>
