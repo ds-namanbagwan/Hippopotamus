@@ -22,7 +22,7 @@ export default function Footer1(data:props) {
             return (
               <>
                 <div className="flex ml-2">
-                  <a href="{res.link}"> {res.label}</a>
+                  <a href="#"> {res.label}</a>
                   <p>|</p> 
                 </div>
                 
