@@ -17,7 +17,7 @@ export default function Header1(data: props) {
             return (
               <>
 
-                <a href="{res.link}" style={{ fontStyle: "italic" }}> {res.label}</a>
+                <a href="{res.link}"> {res.label}</a>
 
               </>
             )
