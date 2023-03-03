@@ -87,7 +87,10 @@ export const config: TemplateConfig = {
       "c_yearimage",
       "c_textSocial",
       "c_socialIcon",
-      "c_socialReceiveText"
+      "c_socialReceiveText",
+      "dm_directoryParents.name",
+      "dm_directoryParents.slug",
+      "dm_directoryParents.meta.entityType"
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -283,6 +286,7 @@ const Location: Template<ExternalApiRenderData> = ({
     c_yearimage,
     c_textSocial,
     c_socialIcon,
+    dm_directoryParents,
     c_socialReceiveText
 
   } = document;
@@ -473,7 +477,12 @@ const Location: Template<ExternalApiRenderData> = ({
 
           <Header1 _site={_site} />
           <Banner1 props={c_banner} />
-         <BreadCrumbs/>
+          <BreadCrumbs
+            name={name}
+            parents={dm_directoryParents}
+            baseUrl={relativePrefixToRoot}
+            address={address}
+          ></BreadCrumbs>
           <div className="container">
             <div className='banner-text banner-dark-bg justify-center text-center'>
               {/* <h1 className="">{name} {name}</h1> */}
