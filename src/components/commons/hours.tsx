@@ -326,7 +326,7 @@ const DayRow = (props: DayRow) => {
                   return (
                     <>
                       {openint.isClosed ? (
-                        <div className="time-group" key={index}>
+                        <div className="time-group mr-3" key={index}>
                           <span className="time-b closeddot">Closed</span>
                         </div>
                       ) : (
@@ -334,7 +334,7 @@ const DayRow = (props: DayRow) => {
                         openint.openIntervals.map((res: any,index:any) => {
                           return (
                             <>
-                              <div className="time-group" key={index}>
+                              <div className="time-group mr-3" key={index}>
                                 <span className="time-b">
                                   {OpenStausFunctions.formatTime(
                                     res.start
@@ -359,7 +359,7 @@ const DayRow = (props: DayRow) => {
               day.openIntervals.map((res: any, index: number) => {
                 return (
                   <>
-                    <div className="time-group" key={index}>
+                    <div className="time-group mr-3" key={index}>
                       <span className="time-b">
                         {OpenStausFunctions.formatTime(res.start)}
                       </span>{" "}
@@ -382,7 +382,7 @@ const DayRow = (props: DayRow) => {
                   return openint.openIntervals.map((res: any,index:number) => {
                     return (
                       <>
-                        <div className="time-group" key={index}>
+                        <div className="time-group mr-3" key={index}>
                           <span className="time-b">
                             {OpenStausFunctions.formatTime(res.start)}
                           </span>{" "}

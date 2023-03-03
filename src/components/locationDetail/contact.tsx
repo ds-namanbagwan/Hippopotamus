@@ -27,14 +27,14 @@ const Contact = (props: any) => {
   return (
     <>
       <div className="address-main-sec">
-        <h4 className="box-title" style={{color:"#a61615"}}>{c_storeInfoHeading?c_storeInfoHeading:"INFO"}</h4>
+        <h4 className="box-title text-red">{c_storeInfoHeading ? c_storeInfoHeading : "INFO"}</h4>
 
         <div className="icon-row content-col">
           <div className="icon">
             {" "}
             {/* <img className=" " src={mapimage} width="20" height="20" alt="mapimage" /> */}
           </div>
-          <div className="  address-text notHighlight" style={{marginLeft:"-7%"}}>
+          <div className="  address-text notHighlight ml-[-7%]">
             {address.line1}
             <div>{address.line2 && <div>{address.line2}</div>}</div>
             <div>{address.city}</div>
@@ -48,7 +48,7 @@ const Contact = (props: any) => {
               {" "}
               {/* <img className=" " src={Phonesvg} width="22" height="22" alt="phonesvg" /> */}
             </div>
-            <div className="content-col" style={{marginLeft:"-7%"}}>
+            <div className="content-col ml-[-7%]">
               <a id="address" className=" location-phn" href={`tel:${phone}`}>
                 {phone}
               </a>
@@ -61,18 +61,21 @@ const Contact = (props: any) => {
         <ul className="">
           <li className="button-bx direction-button">
             <GetDirection
-              buttonText={c_getDirectionsCTAText?c_getDirectionsCTAText:StaticData.getDirection}
+              buttonText={c_getDirectionsCTAText ? c_getDirectionsCTAText : StaticData.getDirection}
               address={address}
               latitude={latitude}
               longitude={longitude}
             />
-            
-          </li>         
+
+          </li>
+        </ul>
+        <ul className=" w-[100%] mt-[5%] p-[2.7%] text-white bg-Dark-red text-center">
+    
+          <li>
+            <a>RESERVE</a>
+          </li>
         </ul>
 
-       
-        
-       
 
         <div className="map-sec">
           <CustomMap prop={yextDisplayCoordinate} />
@@ -84,9 +87,9 @@ const Contact = (props: any) => {
         <div className="hours">
           <div className="hours-sec">
             <div className="title-with-link-1">
-              <h4 className="box-title" style={{color:"#a61615"}}>{"OPENING HOURS"}</h4>
+              <h4 className="box-title" style={{ color: "#a61615" }}>{"OPENING HOURS"}</h4>
             </div>
-            <div className="hours-div mb-5 md:mb-1 flex flex-col" style={{marginLeft:"-5%"}}>
+            <div className="hours-div mb-5 md:mb-1 flex flex-col" style={{ marginLeft: "-5%" }}>
               {hours.holidayHours && typeof hours.reopenDate == "undefined" ? (
                 <>
                   <Model

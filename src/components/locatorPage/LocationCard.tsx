@@ -92,7 +92,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                 <div className="mt-2">
                   {/* <h6>Opening Hours</h6> */}
 
-                  <div>{result.rawData.mainPhone}</div>
+                  <div><a href="#">{result.rawData.mainPhone}</a></div>
 
                   {/* <div className={`storelocation-openCloseTime  capitalize hidden`}>
                     {hoursopen?

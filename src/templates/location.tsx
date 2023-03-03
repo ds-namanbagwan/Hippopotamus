@@ -553,7 +553,7 @@ const Location: Template<ExternalApiRenderData> = ({
 
           <div style={{ textAlign: "center" }}>
             <button className="button-bx direction-button">
-              <a href="#" className="text p-5">{StaticData.a}</a>
+              <a href="/" className="text p-5">{StaticData.a}</a>
             </button>
           </div>
 
