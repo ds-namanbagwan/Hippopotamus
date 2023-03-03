@@ -87,112 +87,112 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 }): HeadConfig => {
 
   return {
-    title: `Restaurant Near Me.`,
+    title: `${document.c_meta_title ? document.c_meta_title : `${document.name} | Find a Local Store`}`,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
-    // tags: [
-    //   {
-    //     type: "link",
-    //     attributes: {
-    //       rel: "shortcut icon",
-    //       href: favicon,
-    //     },
-    //   },
-    //     {
-    //       type: "meta",
-    //       attributes: {
-    //         name: "description",
-    //         content:`${document.c_meta_description?document.c_meta_description:`Use this page to find your nearest MGM store in ${document.name} and discover the location details you need to visit us today.`}`,
-    //       },
-    //     },
+    tags: [
+      {
+        type: "link",
+        attributes: {
+          rel: "shortcut icon",
+          href: favicon,
+        },
+      },
+        {
+          type: "meta",
+          attributes: {
+            name: "description",
+            content:`${document.c_meta_description?document.c_meta_description:`Use this page to find your nearest ${document.name} and discover the location details you need to visit us today.`}`,
+          },
+        },
 
-    //     {
-    //       type: "meta",
-    //       attributes: {
-    //         name: "author",
-    //         content: StaticData.Brandname,
-    //       },
-    //     },
-    //     {
-    //       type: "meta",
-    //       attributes: {
-    //         name: "keywords",
-    //         content: document.name,
-    //       },
-    //     },
-    //     {
-    //       type: "meta",
-    //       attributes: {
-    //         name: "robots",
-    //         content: "noindex, nofollow",
-    //       },
-    //     },
+        {
+          type: "meta",
+          attributes: {
+            name: "author",
+            content: StaticData.Brandname,
+          },
+        },
+        {
+          type: "meta",
+          attributes: {
+            name: "keywords",
+            content: document.name,
+          },
+        },
+        {
+          type: "meta",
+          attributes: {
+            name: "robots",
+            content: "noindex, nofollow",
+          },
+        },
 
-    //     // {
-    //     //   type: "link",
-    //     //   attributes: {
-    //     //     rel: "canonical",
-    //     //     href: `${
-    //     //       stagingBaseurl 
-    //     //          ? stagingBaseurl + document.slug + ".html"
-    //     //          : "/" + document.slug + ".html"
-    //     //     }`,
-    //     //   },
-    //     // },
-    //   //   // /og tags
+        // {
+        //   type: "link",
+        //   attributes: {
+        //     rel: "canonical",
+        //     href: `${
+        //       stagingBaseurl 
+        //          ? stagingBaseurl + document.slug + ".html"
+        //          : "/" + document.slug + ".html"
+        //     }`,
+        //   },
+        // },
+      //   // /og tags
 
-    //     {
-    //       type: "meta",
-    //       attributes: {
-    //         property: "og:url",
-    //         content: `/${document.slug?document.slug:`${document.name.toLowerCase()}`}.html`,
-    //       },
-    //     },
-    //     {
-    //       type: "meta",
-    //       attributes: {
-    //         property: "og:description",
-    //         content: `RESTAURANT.`,
-    //       },
-    //     },
-    //     {
-    //       type: "meta",
-    //       attributes: {
-    //         property: "og:title",
-    //         content: `RESTAURANT NEAR ME.`,
-    //       },
-    //     },
-    //     {
-    //       type: "meta",
-    //       attributes: {
-    //         property: "og:image",
-    //         content: favicon,
-    //       },
-    //     },
+        {
+          type: "meta",
+          attributes: {
+            property: "og:url",
+            content: `/${document.slug?document.slug:`${document.name.toLowerCase()}`}.html`,
+          },
+        },
+        {
+          type: "meta",
+          attributes: {
+            property: "og:description",
+            content: `${document.c_meta_description ? document.c_meta_description : `Find ${document.name}. We stock high-quality, robust products at competitive rates.`}`,
+          },
+        },
+        {
+          type: "meta",
+          attributes: {
+            property: "og:title",
+            content: `${document.name}`,
+          },
+        },
+        {
+          type: "meta",
+          attributes: {
+            property: "og:image",
+            content: favicon,
+          },
+        },
 
-    //   {
-    //     type: "meta",
-    //     attributes: {
-    //       name: "twitter:card",
-    //       content: "summary",
-    //     },
-    //   },
-    //   {
-    //     type: "meta",
-    //     attributes: {
-    //       name: "twitter:url",
-    //       content: `/${document.slug?document.slug:`${document.name.toLowerCase()}`}.html`,
-    //     },
-    //   },
+      {
+        type: "meta",
+        attributes: {
+          name: "twitter:card",
+          content: "summary",
+        },
+      },
+      {
+        type: "meta",
+        attributes: {
+          name: "twitter:url",
+          content: `/${document.slug?document.slug:`${document.name.toLowerCase()}`}.html`,
+        },
+      },
 
-    //   {
-    //     type: "meta",
-    //     attributes: {
-    //       name: "twitter:description",
-    //       content: `${document.c_meta_description?document.c_meta_description:`Find MGM Timber Store in ${document.name}. We stock high-quality, robust products at competitive rates.`}`
-    //     },
-    //   },
-    // ],
+      {
+        type: "meta",
+        attributes: {
+          name: "twitter:description",
+          content: `${document.c_meta_description?document.c_meta_description:`Find MGM Timber Store in ${document.name}. We stock high-quality, robust products at competitive rates.`}`
+        },
+      },
+    ],
   };
 };
 
