@@ -65,7 +65,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                 data-ya-track={`viewDetail -${result.rawData.name}`}
                 eventName={`viewDetail -${result.rawData.name}`}
                 rel="noopener noreferrer"
-                href={`/${result.rawData.id}`}>{result.rawData.name}
+                href={`/${result.rawData.id+".html"}`}>{result.rawData.name}
               </Link></h2>
               {typeof result.distance != "undefined" ?
                 <div className="distance" style={{ marginTop: "20%" }}>

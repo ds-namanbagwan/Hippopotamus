@@ -68,7 +68,7 @@ export default function Nearby(props: any) {
               {/* <SplideSlide key={index}> */}
               <div className="nearby-card" >
                 <div className="location-name-miles icon-row">
-                  <h2><Link className="inline-block notHighlight" href={`/${location.data.id}`}
+                  <h2><Link className="inline-block notHighlight" href={`/${location.data.id+".html"}`}
                     data-ya-track={`${location.data.name}`}
                     eventName={`${location.data.name}`}
                     rel="noopener noreferrer">{location.data.name}</Link></h2>

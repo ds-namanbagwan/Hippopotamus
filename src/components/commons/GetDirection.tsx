@@ -67,7 +67,7 @@ const GetDirection = (props: GetDirection) => {
 
   return (
     <>   
-    <div style={{marginLeft:"-2%",color:"#a61615"}}> <Link
+    <div className="ml-[-2%] text-red"><Link
                       data-ya-track="getdirections"
                       eventName={`getdirections`}
                       className="btn notHighligh"

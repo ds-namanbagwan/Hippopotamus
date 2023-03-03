@@ -109,17 +109,17 @@ export const config: TemplateConfig = {
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  var url = "";
-  var name: any = document.name.toLowerCase();
-  var string: any = name.toString();;
-  let result: any = string.replaceAll(" ", "-");  
-  if (document.slug) {
-    url = `${result}.html`;
-  } else {
-    url = `${document.slug.toString()}.html`;
-  }
+  // var url = "";
+  // var name: any = document.name.toLowerCase();
+  // var string: any = name.toString();;
+  // let result: any = string.replaceAll(" ", "-");  
+  // if (document.slug) {
+  //   url = `${result}.html`;
+  // } else {
+  //   url = `${document.slug.toString()}.html`;
+  // }
 
-  return url;
+  return document.id+".html";
 };
 /**
  * Defines a list of paths which will redirect to the path created by getPath.

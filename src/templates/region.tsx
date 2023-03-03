@@ -246,7 +246,7 @@ const region: Template<TemplateRenderProps> = ({
         entity.dm_directoryChildren.map((res: any) => {
             //detlslug = `/${res.id.toString()}.html`;
             detlslug = slug+"/"+entity.slug+"/"+res.id+".html";
-            console.log(detlslug,"dsdddsv");
+            // console.log(detlslug,"dsdddsv");
         })
       } else {
         detlslug = slug + "/" + entity.slug + ".html";

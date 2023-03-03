@@ -44,7 +44,7 @@ export const config: TemplateConfig = {
       // "c_locatorBannerTitle",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
-      // "dm_directoryParents.meta.entityType",
+      "dm_directoryParents.meta.entityType",
       "dm_directoryChildren.name",
       "dm_directoryChildren.address",
       "dm_directoryChildren.slug",
@@ -217,67 +217,60 @@ const country: Template<TemplateRenderProps> = ({
     let detlslug;
 
 
+    if (typeof entity.dm_directoryChildren != "undefined") {
+      if (entity.dm_directoryChildrenCount == 1) {
+        entity.dm_directoryChildren.map((res: any) => {
+          // console.log(res,"jhgsvhfvbfb")
+          let detlslug1 = "";
+
+          if (!res.slug) {
+            let slugString = res.id + " " + res.name;
+            let slug = slugString;
+            detlslug1 = `${slug}.html`;
+          } else {
+            detlslug1 = `${res.slug.toString()}.html`;
+          }
+          
+
+          res.dm_directoryChildren ? res.dm_directoryChildren.map((detl: any) => {
+
+            if (!detl.slug) {
+              let slugString = detl.id + " " + detl.name;
+              let slug = slugString;
+              detlslug1 = `${slug}.html`;
+            } else {
+              detlslug1 = `${detl.slug.toString()}.html`;
+            }
+
+            detlslug = detlslug1;
+
+          }) : detlslug = detlslug1;
+      
+
+        });
+      }
+      else {
+        detlslug = slug + "/" + entity.slug + ".html";
+        // console.log(detlslug,"dghgdjghjgd")
+      }
+    }
+
     // if (typeof entity.dm_directoryChildren != "undefined") {
     //   if (entity.dm_directoryChildrenCount == 1) {
     //     entity.dm_directoryChildren.map((res: any) => {
     //       res.dm_directoryChildren.map((detl: any) => {
-    //       let detlslug1 = "";
-
-    //       if (!res.slug) {
-    //         let slugString = res.id + " " + res.name;
-    //         let slug = slugString;
-    //         detlslug1 = `${slug}.html`;
-    //       } else {
-    //         detlslug1 = `${res.slug.toString()}.html`;
-    //       }
-    //       if (res.meta.entityType.id == 'ce_city') {
-    //         detlslug1 = "fr/" + detlslug1;
-    //       }
-    //       else {
-    //         detlslug1 = detlslug1;
-    //       }
-
-    //       // console.log(entity.name, res);
-
-    //       res.dm_directoryChildren ? res.dm_directoryChildren.map((detl: any) => {
-
-    //         if (!detl.slug) {
-    //           let slugString = detl.id + " " + detl.name;
-    //           let slug = slugString;
-    //           detlslug1 = `${slug}.html`;
-    //         } else {
-    //           detlslug1 = `${detl.slug.toString()}.html`;
-    //         }
-
-    //         detlslug = detlslug1;
-
-    //       }) : detlslug = detlslug1;
+    //         var name: any = detl.name.toLowerCase();
+    //         var string: any = name.toString();
+    //         let result: any = string.replaceAll(" ", "-");
+    //         detlslug = result + ".html";
+    //         // console.log(detlslug, "detlslug");
+    //       });
     //     });
-
-    //     });
-    //   }
-    //   else {
-    //     detlslug = slug + "/" + entity.slug + ".html";
-    //     // console.log(detlslug,"dghgdjghjgd")
+    //   } else {
+    //     detlslug = "/" + slug + "/" + entity.slug + ".html";
+    //     // {console.log(detlslug,"lower")}
     //   }
     // }
-
-    if (typeof entity.dm_directoryChildren != "undefined") {
-      if (entity.dm_directoryChildrenCount == 1) {
-        entity.dm_directoryChildren.map((res: any) => {
-          res.dm_directoryChildren.map((detl: any) => {
-            var name: any = detl.name.toLowerCase();
-            var string: any = name.toString();
-            let result: any = string.replaceAll(" ", "-");
-            detlslug = result + ".html";
-            console.log(detlslug, "detlslug");
-          });
-        });
-      } else {
-        detlslug = "/" + slug + "/" + entity.slug + ".html";
-        // {console.log(detlslug,"lower")}
-      }
-    }
 
     return (
       <li className=" storelocation-category">
@@ -299,16 +292,13 @@ const country: Template<TemplateRenderProps> = ({
   return (
     <>
       <Header1 _site={_site} />
-      {/* <BreadCrumbs
+      <BreadCrumbs
           name={regionNames.of(name)}
           address={address}
           parents={dm_directoryParents}
           baseUrl={relativePrefixToRoot}
-        ></BreadCrumbs> */}
-      {/* <div className="location-dtl">
-          <Banner name={regionNames.of(name)} c_bannerImage={bannerimage} />
-        </div> */}
-
+        ></BreadCrumbs>
+    
       <div className="content-list">
         <div className="container">
           <div className="sec-title">
