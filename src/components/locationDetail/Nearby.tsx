@@ -9,6 +9,7 @@ import Phonesvg from "../../images/phone.svg"
 import { Addresssvg, mobilesvg, View_Store } from "../../../sites-global/global";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { Link } from "@yext/pages/components";
+import { StaticData } from "../../../sites-global/staticData";
 
 export default function Nearby(props: any) {
 
@@ -73,6 +74,9 @@ export default function Nearby(props: any) {
                     eventName={`${location.data.name}`}
                     rel="noopener noreferrer">{location.data.name}</Link></h2>
 
+                </div>
+                <div className="distance mt-14">
+                  {metersToMiles(location.distance)} <span>{StaticData.miles}</span>
                 </div>
 
                 <div className="icon-row closeing-div">

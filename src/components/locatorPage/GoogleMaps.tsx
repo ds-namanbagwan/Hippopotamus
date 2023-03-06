@@ -501,7 +501,7 @@ function UnwrappedGoogleMaps({
             {/* <div className="icon"> <img className=" " src={mapimage} width="20" height="20"
         alt="" /></div> */}
             <h2>
-              <a className="inline-block notHighlight" href={`/${result.rawData.id}`}>
+              <a className="inline-block notHighlight" href={`/${result.rawData.id+".html"}`}>
                 {result.rawData.name}
               </a>
             </h2>

@@ -19,24 +19,23 @@ function SocialData(data: any) {
                     <p className="mt-[2.5%] ml-[2%] mr-[2%] w-[19%]" style={{
                         fontSize: "15px",
                         fontWeight: "bold", fontFamily: "Roboto"
-                    }}>{c_textSocial}</p>
+                    }}>{c_textSocial}
+                    </p>
                     {c_socialIcon?.map((item: any) => {
                         return (
                             <>
-                                 <div className="w-[80px]">
-                                <img src={item.url} alt="" />
+                                <div className="w-[80px]">
+                                    <img src={item.url} alt="" />
                                 </div>
                             </>
                         )
                     })}
                     <div className="relative ml-[3%] w-52" >
                         <img src="https://a.mktgcdn.com/p/tA6P5CMH9AgZt5U5-_SLUn9Ot5l-JISFSgA4ByOphFo/495x240.png" alt="" />
-                      <div className="text absolute top-2 text-white font-bold ml-[25%] mt-[10%]">{c_socialReceiveText}</div>
-
+                        <div className="text absolute top-2 text-white font-bold ml-[25%] mt-[10%]">{c_socialReceiveText}
+                        </div>
                     </div>
-
                 </div>
-
             </div>
         </>
     )
