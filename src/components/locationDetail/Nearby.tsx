@@ -68,7 +68,7 @@ export default function Nearby(props: any) {
               {/* <SplideSlide key={index}> */}
               <div className="nearby-card" >
                 <div className="location-name-miles icon-row">
-                  <h2><Link className="inline-block notHighlight" href={`/${location.data.id+".html"}`}
+                  <h2><Link className="inline-block notHighlight" href={`/${location.data.id + ".html"}`}
                     data-ya-track={`${location.data.name}`}
                     eventName={`${location.data.name}`}
                     rel="noopener noreferrer">{location.data.name}</Link></h2>
@@ -95,16 +95,9 @@ export default function Nearby(props: any) {
                   <Address address={location.data.address} />
                 </div>
 
-                {/* <div className="button-bx"> */}
-                {/* <Link className="btn" href={`/${location.data.id}`}
-                       data-ya-track={`viewstore-${location.data.name}`}
-                       eventName={`viewstore-${location.data.name}`}
-                       rel="noopener noreferrer">
-                        {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
-                {/* // STORE DETAILS</Link> */}
-                {/* <GetDirection buttonText={props.c_getDirectionsCTAText?props.c_getDirectionsCTAText:"Get directions"} address={location.data.address} latitude={location.data.displayCoordinate ? location.data.displayCoordinate.latitude : location.data.yextDisplayCoordinate.latitude} longitude={location.data.displayCoordinate ? location.data.displayCoordinate.longitude : location.data.yextDisplayCoordinate.longitude} /> */}
-
-                {/* </div> */}
+                {/* <div className="button-bx">                 
+                  <GetDirection buttonText={props.c_getDirectionsCTAText ? props.c_getDirectionsCTAText : "Get directions"} address={location.data.address} latitude={location.data.displayCoordinate ? location.data.displayCoordinate.latitude : location.data.yextDisplayCoordinate.latitude} longitude={location.data.displayCoordinate ? location.data.displayCoordinate.longitude : location.data.yextDisplayCoordinate.longitude} />
+                </div> */}
               </div>
               {/* </SplideSlide> */}
             </>

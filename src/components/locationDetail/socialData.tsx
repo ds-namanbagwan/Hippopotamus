@@ -17,13 +17,15 @@ function SocialData(data: any) {
                 <div className="flex w-full justify-center" >
                     <img className="w-52" src={c_yearimage.url} alt="" />
                     <p className="mt-[2.5%] ml-[2%] mr-[2%] w-[19%]" style={{
-                        fontSize: "16px",
+                        fontSize: "15px",
                         fontWeight: "bold", fontFamily: "Roboto"
                     }}>{c_textSocial}</p>
                     {c_socialIcon?.map((item: any) => {
                         return (
                             <>
-                                <img src={item.url} width={80} alt="" />
+                                 <div className="w-[80px]">
+                                <img src={item.url} alt="" />
+                                </div>
                             </>
                         )
                     })}
