@@ -36,8 +36,9 @@ import CustomMap from "../components/locationDetail/CustomMap";
 import BreadCrumbs from "../components/layouts/Breadcrumb";
 import StoreHighlight from "../components/locationDetail/SoreHighlight";
 import OpenClose from "../components/commons/openClose";
-import Faq from "../components/locationDetail/Faqs";
+// import Faq from "../components/locationDetail/Faqs";
 import { StaticData } from "../../sites-global/staticData";
+import Faq from "../components/locationDetail/Faqs1";
 
 import { apikey_for_entity, baseuRL, stagingBaseurl, AnalyticsEnableDebugging, AnalyticsEnableTrackingCookie, favicon } from "../../sites-global/global";
 import {
@@ -90,7 +91,9 @@ export const config: TemplateConfig = {
       "c_socialReceiveText",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
-      "dm_directoryParents.meta.entityType"
+      "dm_directoryParents.meta.entityType",
+      "c_faqs.name",
+      "c_faqs.answer"
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -287,7 +290,8 @@ const Location: Template<ExternalApiRenderData> = ({
     c_textSocial,
     c_socialIcon,
     dm_directoryParents,
-    c_socialReceiveText
+    c_socialReceiveText,
+    c_faqs
 
   } = document;
 
@@ -536,7 +540,9 @@ const Location: Template<ExternalApiRenderData> = ({
               {photo}
             </div>
           </div>
-
+      
+{/*       
+          <Faq faqs={c_faqs}/> */}
           <div className="nearby-sec" >
             <div className="container">
               <div className="sec-title">
@@ -560,7 +566,7 @@ const Location: Template<ExternalApiRenderData> = ({
           <div>
             <SocialData c_socialIcon={c_socialIcon} c_socialReceiveText={c_socialReceiveText} c_yearimage={c_yearimage} c_textSocial={c_textSocial} />
           </div>
-
+           
 
           <Footer1 _site={_site} />
           {/* </PageLayout> */}

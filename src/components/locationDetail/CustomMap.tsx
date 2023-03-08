@@ -1,6 +1,6 @@
 import * as React from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import marker from "../../images/MGMpin.svg";
+import marker from "../../images/CustomMapmarker.svg";
 
 const containerStyle = {
   width: "100%",
@@ -36,7 +36,7 @@ function CustomMap(coords: props) {
           lat: coords.prop && coords.prop.latitude,
           lng: coords.prop && coords.prop.longitude,
         }}
-        zoom={10}
+        zoom={15}
         options={{
           styles:[
             {

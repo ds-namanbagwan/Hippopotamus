@@ -24,7 +24,7 @@ function SocialData(data: any) {
                     {c_socialIcon?.map((item: any) => {
                         return (
                             <>
-                                <div className="w-[80px]">
+                                <div className="w-[80px] ml-3">
                                     <img src={item.url} alt="" />
                                 </div>
                             </>
