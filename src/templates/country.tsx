@@ -98,77 +98,77 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           href: favicon,
         },
       },
-        {
-          type: "meta",
-          attributes: {
-            name: "description",
-            content:`${document.c_meta_description?document.c_meta_description:`Use this page to find your nearest ${document.name} and discover the location details you need to visit us today.`}`,
-          },
+      {
+        type: "meta",
+        attributes: {
+          name: "description",
+          content: `${document.c_meta_description ? document.c_meta_description : `Use this page to find your nearest ${document.name} and discover the location details you need to visit us today.`}`,
         },
+      },
 
-        {
-          type: "meta",
-          attributes: {
-            name: "author",
-            content: StaticData.Brandname,
-          },
+      {
+        type: "meta",
+        attributes: {
+          name: "author",
+          content: StaticData.Brandname,
         },
-        {
-          type: "meta",
-          attributes: {
-            name: "keywords",
-            content: document.name,
-          },
+      },
+      {
+        type: "meta",
+        attributes: {
+          name: "keywords",
+          content: document.name,
         },
-        {
-          type: "meta",
-          attributes: {
-            name: "robots",
-            content: "noindex, nofollow",
-          },
+      },
+      {
+        type: "meta",
+        attributes: {
+          name: "robots",
+          content: "noindex, nofollow",
         },
+      },
 
-        // {
-        //   type: "link",
-        //   attributes: {
-        //     rel: "canonical",
-        //     href: `${
-        //       stagingBaseurl 
-        //          ? stagingBaseurl + document.slug + ".html"
-        //          : "/" + document.slug + ".html"
-        //     }`,
-        //   },
-        // },
+      // {
+      //   type: "link",
+      //   attributes: {
+      //     rel: "canonical",
+      //     href: `${
+      //       stagingBaseurl 
+      //          ? stagingBaseurl + document.slug + ".html"
+      //          : "/" + document.slug + ".html"
+      //     }`,
+      //   },
+      // },
       //   // /og tags
 
-        {
-          type: "meta",
-          attributes: {
-            property: "og:url",
-            content: `/${document.slug?document.slug:`${document.name.toLowerCase()}`}.html`,
-          },
+      {
+        type: "meta",
+        attributes: {
+          property: "og:url",
+          content: `/${document.slug ? document.slug : `${document.name.toLowerCase()}`}.html`,
         },
-        {
-          type: "meta",
-          attributes: {
-            property: "og:description",
-            content: `${document.c_meta_description ? document.c_meta_description : `Find ${document.name}. We stock high-quality, robust products at competitive rates.`}`,
-          },
+      },
+      {
+        type: "meta",
+        attributes: {
+          property: "og:description",
+          content: `${document.c_meta_description ? document.c_meta_description : `Find ${document.name}. We stock high-quality, robust products at competitive rates.`}`,
         },
-        {
-          type: "meta",
-          attributes: {
-            property: "og:title",
-            content: `${document.name}`,
-          },
+      },
+      {
+        type: "meta",
+        attributes: {
+          property: "og:title",
+          content: `${document.name}`,
         },
-        {
-          type: "meta",
-          attributes: {
-            property: "og:image",
-            content: favicon,
-          },
+      },
+      {
+        type: "meta",
+        attributes: {
+          property: "og:image",
+          content: favicon,
         },
+      },
 
       {
         type: "meta",
@@ -181,7 +181,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "twitter:url",
-          content: `/${document.slug?document.slug:`${document.name.toLowerCase()}`}.html`,
+          content: `/${document.slug ? document.slug : `${document.name.toLowerCase()}`}.html`,
         },
       },
 
@@ -189,7 +189,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "twitter:description",
-          content: `${document.c_meta_description?document.c_meta_description:`Find MGM Timber Store in ${document.name}. We stock high-quality, robust products at competitive rates.`}`
+          content: `${document.c_meta_description ? document.c_meta_description : `Find MGM Timber Store in ${document.name}. We stock high-quality, robust products at competitive rates.`}`
         },
       },
     ],
@@ -230,7 +230,7 @@ const country: Template<TemplateRenderProps> = ({
           } else {
             detlslug1 = `${res.slug.toString()}.html`;
           }
-          
+
 
           res.dm_directoryChildren ? res.dm_directoryChildren.map((detl: any) => {
 
@@ -245,7 +245,7 @@ const country: Template<TemplateRenderProps> = ({
             detlslug = detlslug1;
 
           }) : detlslug = detlslug1;
-      
+
 
         });
       }
@@ -293,12 +293,12 @@ const country: Template<TemplateRenderProps> = ({
     <>
       <Header1 _site={_site} />
       <BreadCrumbs
-          name={regionNames.of(name)}
-          address={address}
-          parents={dm_directoryParents}
-          baseUrl={relativePrefixToRoot}
-        ></BreadCrumbs>
-    
+        name={regionNames.of(name)}
+        address={address}
+        parents={dm_directoryParents}
+        baseUrl={relativePrefixToRoot}
+      ></BreadCrumbs>
+
       <div className="content-list">
         <div className="container">
           <div className="sec-title">
