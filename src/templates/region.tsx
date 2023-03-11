@@ -88,13 +88,13 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   path,
   document,
 }): HeadConfig => {
-  var canonical="";
+  var canonical = "";
   document.dm_directoryParents.map((entity: any) => {
-    
-      canonical=entity.slug.toLowerCase();
-    })
-   
-   
+
+    canonical = entity.slug.toLowerCase();
+  })
+
+
   return {
     title: `Restaurant Near Me.`,
     charset: "UTF-8",
@@ -107,13 +107,13 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           href: favicon,
         },
       },
-        {
-          type: "meta",
-          attributes: {
-            name: "description",
-            content:`${document.c_meta_description?document.c_meta_description:`Use this page to find your nearest MGM store in ${document.name} and discover the location details you need to visit us today.`}`,
-          },
+      {
+        type: "meta",
+        attributes: {
+          name: "description",
+          content: `${document.c_meta_description ? document.c_meta_description : `Use this page to find your nearest MGM store in ${document.name} and discover the location details you need to visit us today.`}`,
         },
+      },
 
       //   {
       //     type: "meta",
@@ -122,73 +122,71 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
       //       content: `${document.c_metaTitle}`,
       //     },
       //   },
-        {
-          type: "meta",
-          attributes: {
-            name: "author",
-            content: StaticData.Brandname,
-          },
+      {
+        type: "meta",
+        attributes: {
+          name: "author",
+          content: StaticData.Brandname,
         },
-        {
-          type: "meta",
-          attributes: {
-            name: "keywords",
-            content: document.name,
-          },
+      },
+      {
+        type: "meta",
+        attributes: {
+          name: "keywords",
+          content: document.name,
         },
-        {
-          type: "meta",
-          attributes: {
-            name: "robots",
-            content: "noindex, nofollow",
-          },
+      },
+      {
+        type: "meta",
+        attributes: {
+          name: "robots",
+          content: "noindex, nofollow",
         },
+      },
 
-        {
-          type: "link",
-          attributes: {
-            rel: "canonical",
-            href: `${
-             stagingBaseurl
-                 ? stagingBaseurl+ canonical + "/" + document.slug + ".html"
-                 : "/" + document.slug + ".html"
+      {
+        type: "link",
+        attributes: {
+          rel: "canonical",
+          href: `${stagingBaseurl
+            ? stagingBaseurl + canonical + "/" + document.slug + ".html"
+            : "/" + document.slug + ".html"
             }`,
-          },
         },
+      },
       //   // /og tags
 
-        {
-          type: "meta",
-          attributes: {
-            property: "og:url",
-            content:`${
-              stagingBaseurl
-                  ? stagingBaseurl+ canonical + "/" + document.slug + ".html"
-                  : "/" + document.slug + ".html"
-             }`,
-          },
+      {
+        type: "meta",
+        attributes: {
+          property: "og:url",
+          content: `${stagingBaseurl
+            ? stagingBaseurl + canonical + "/" + document.slug + ".html"
+            : "/" + document.slug + ".html"
+            }`,
         },
-        {
-          type: "meta",
-          attributes: {
-            property: "og:description",
-            content: `RESTAURANT.`,
-          },
+      },
+      {
+        type: "meta",
+        attributes: {
+          property: "og:description",
+          content: `RESTAURANT.`,
         },
-        {
-          type: "meta",
-          attributes: {
-            property: "og:title",
-            content: `RESTAURANT NEAR ME.`,
-          },
+      },
+      {
+        type: "meta",
+        attributes: {
+          property: "og:title",
+          content: `RESTAURANT NEAR ME.`,
         },
-        {
-          type: "meta",
-          attributes: {
-            property: "og:image",
-            content: favicon,
-          },
+      },
+      {
+        type: "meta",
+        attributes: {
+          property: "og:image",
+          content: favicon,
         },
+      },
 
       {
         type: "meta",
@@ -201,7 +199,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "twitter:url",
-          content: `/${document.slug?document.slug:`${document.name.toLowerCase()}`}.html`,
+          content: `/${document.slug ? document.slug : `${document.name.toLowerCase()}`}.html`,
         },
       },
 
@@ -209,7 +207,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "twitter:description",
-          content: `${document.c_meta_description?document.c_meta_description:`Find MGM Timber Store in ${document.name}. We stock high-quality, robust products at competitive rates.`}`
+          content: `${document.c_meta_description ? document.c_meta_description : `Find MGM Timber Store in ${document.name}. We stock high-quality, robust products at competitive rates.`}`
         },
       },
     ],
@@ -244,9 +242,9 @@ const region: Template<TemplateRenderProps> = ({
 
       if (entity.dm_directoryChildrenCount == 1) {
         entity.dm_directoryChildren.map((res: any) => {
-            detlslug = `/${res.id.toString()}.html`;
-            // detlslug = slug+"/"+entity.slug+"/"+res.id+".html";
-            // console.log(detlslug,"dsdddsv");
+          detlslug = `/${res.id.toString()}.html`;
+          // detlslug = slug+"/"+entity.slug+"/"+res.id+".html";
+          // console.log(detlslug,"dsdddsv");
         })
       } else {
         detlslug = slug + "/" + entity.slug + ".html";
@@ -267,40 +265,40 @@ const region: Template<TemplateRenderProps> = ({
     )
   }) : null;
 
- 
+
 
   let bannerimage = c_banner_image && c_banner_image.image.url;
   return (
     <>
-        <Header1 _site={_site}/>
-        
-          {/* <div className="location-dtl">     <Banner name={c_bannerHeading?c_bannerHeading:name} c_bannerImage={bannerimage}  /></div> */}
-          {/* <Banner1 _site={_site}/> */}
+      <Header1 _site={_site} />
 
-          <BreadCrumbs
-            name={name}
-            parents={dm_directoryParents}
-            baseUrl={relativePrefixToRoot}
-            address={address}
-          ></BreadCrumbs>
+      {/* <div className="location-dtl">     <Banner name={c_bannerHeading?c_bannerHeading:name} c_bannerImage={bannerimage}  /></div> */}
+      {/* <Banner1 _site={_site}/> */}
 
-          <div className="content-list">
-            <div className="container">
-            <div className="sec-title">
-                <h2 style={{ textAlign: "center" }}>
+      <BreadCrumbs
+        name={name}
+        parents={dm_directoryParents}
+        baseUrl={relativePrefixToRoot}
+        address={address}
+      ></BreadCrumbs>
+
+      <div className="content-list">
+        <div className="container">
+          <div className="sec-title">
+            <h2 style={{ textAlign: "center" }}>
               {name}
-                </h2>
-              </div>
-              <ul className="region-list" style={{justifyContent:"center"}}>
-
-                {childrenDivs}
-              </ul>
-
-            </div>
+            </h2>
           </div>
+          <ul className="region-list" style={{ justifyContent: "center" }}>
 
-          <Footer1 _site={_site} />
-        
+            {childrenDivs}
+          </ul>
+
+        </div>
+      </div>
+
+      <Footer1 _site={_site} />
+
     </>
   )
 }

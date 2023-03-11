@@ -159,7 +159,7 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 .result-inner{@apply p-4 }
 .button-bx{@apply  flex-col sm:flex-row mt-2.5 justify-around  ml-6}
 .button-bx .btn{@apply py-1.5 md:py-2  text-center cursor-pointer leading-4 sm:leading-[1.375rem] w-full sm:w-[48%]  
-   px-2 transition-all duration-300 hover:bg-hover-btn text-gray-dark
+   px-2 transition-all duration-300 hover:bg-red text-gray-dark
     hover:text-white   border-black border hover:border-transparent  bg-white text-sm md:text-base font-medium flex items-center justify-center  }
 .button-bx .btn + .btn{  @apply mt-2 sm:mt-0}     
 .button-bx .btn:hover svg{@apply fill-white  }

@@ -10,7 +10,10 @@ import {
 import * as React from "react";
 import { favicon } from "../../sites-global/global";
 import { StaticData } from "../../sites-global/staticData";
+import Footer1 from "../components/layouts/NewFooter";
+import Header1 from "../components/layouts/NewHeader";
 import PageLayout from "../components/layouts/PageLayout";
+import "../index.css";
 export const config: TemplateConfig = {
   stream: {
     $id: "404",
@@ -18,11 +21,11 @@ export const config: TemplateConfig = {
     // directly as props to the default exported function.
     fields: [
       "name",
-      
+
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
-      entityIds: ["global-data"]
+      entityIds: ["header&footer"]
     },
     // The entity language profiles that documents will be generated for.
     localization: {
@@ -62,7 +65,8 @@ const FourOhFour: Template<TemplateRenderProps> = ({
   } = document;
   return (
     <>
-      <PageLayout global={_site}>
+      {/* <PageLayout global={_site}> */}
+      <Header1 _site={_site} />
         <div className="content-list">
           <div className="container">
             <div className="sec-title text-center">
@@ -71,7 +75,7 @@ const FourOhFour: Template<TemplateRenderProps> = ({
               </h1>
               <p>{StaticData.cantfind_page}.</p>
               <p>{StaticData.Youcouldtry}</p>
-              <div className="button-bx max-w-[45rem] !mx-auto !mt-5">
+              <div className="button-bx max-w-[45rem] flex !mt-[5%] !mb-[5%] !ml-[25%]">
                 <a className="btn" href="javascript:history.back()">{StaticData.Previuspage} &gt;</a>
                 <a className="btn" href="/">{StaticData.homePage} &gt;</a>
               </div>
@@ -80,7 +84,7 @@ const FourOhFour: Template<TemplateRenderProps> = ({
 
           </div>
         </div>
-      </PageLayout>
+        <Footer1 _site={_site} />
     </>
   );
 };

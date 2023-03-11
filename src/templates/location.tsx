@@ -125,7 +125,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
   //   url = `${document.slug.toString()}.html`;
   // }
 
-  return document.id+".html";
+  return document.id + ".html";
 };
 /**
  * Defines a list of paths which will redirect to the path created by getPath.
@@ -418,7 +418,7 @@ const Location: Template<ExternalApiRenderData> = ({
   let bannerimage = c_banner_image && c_banner_image.image.url;
   let image = photoGallery.map((img: any) => {
     return <>
-      <img src={img.image.url}  alt=""/>
+      <img src={img.image.url} alt="" />
 
       <div style={{
         fontWeight: "bold", fontFamily: "Bebas Neue", color: "#373a3c", fontSize: "1.55rem",
@@ -540,8 +540,8 @@ const Location: Template<ExternalApiRenderData> = ({
               {photo}
             </div>
           </div>
-      
-{/*       
+
+          {/*       
           <Faq faqs={c_faqs}/> */}
           <div className="nearby-sec" >
             <div className="container">
@@ -566,7 +566,7 @@ const Location: Template<ExternalApiRenderData> = ({
           <div>
             <SocialData c_socialIcon={c_socialIcon} c_socialReceiveText={c_socialReceiveText} c_yearimage={c_yearimage} c_textSocial={c_textSocial} />
           </div>
-           
+
 
           <Footer1 _site={_site} />
           {/* </PageLayout> */}

@@ -141,8 +141,8 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         attributes: {
           rel: "canonical",
           href: `${stagingBaseurl
-              ? stagingBaseurl + canonical + "/" + document.slug + ".html"
-              : "/" + document.slug + ".html"
+            ? stagingBaseurl + canonical + "/" + document.slug + ".html"
+            : "/" + document.slug + ".html"
             }`,
         },
       },
@@ -153,8 +153,8 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         attributes: {
           property: "og:url",
           content: `${stagingBaseurl
-              ? stagingBaseurl + canonical + "/" + document.slug + ".html"
-              : "/" + document.slug + ".html"
+            ? stagingBaseurl + canonical + "/" + document.slug + ".html"
+            : "/" + document.slug + ".html"
             }`,
         },
       },
@@ -315,11 +315,11 @@ const City: Template<TemplateRenderProps> = ({
 
 
 
-        <div className="button-bx">          
-         <GetDirection buttonText={StaticData.getDirection} address={entity.address} latitude={entity.yextDisplayCoordinate.latitude} longitude={entity.yextDisplayCoordinate.longitude} />
+        <div className="button-bx">
+          <GetDirection buttonText={StaticData.getDirection} address={entity.address} latitude={entity.yextDisplayCoordinate.latitude} longitude={entity.yextDisplayCoordinate.longitude} />
         </div>
 
-        
+
 
       </div>
     );

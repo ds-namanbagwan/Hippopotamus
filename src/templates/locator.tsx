@@ -156,7 +156,7 @@ const Locator: Template<TemplateRenderProps> = ({
     _site
   } = document;
 
-  
+
   let templateData = { document: document, __meta: __meta };
   const endpoints = {
     universalSearch: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/query",
