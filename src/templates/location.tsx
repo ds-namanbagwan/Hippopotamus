@@ -115,17 +115,24 @@ export const config: TemplateConfig = {
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  // var url = "";
-  // var name: any = document.name.toLowerCase();
-  // var string: any = name.toString();;
-  // let result: any = string.replaceAll(" ", "-");  
-  // if (document.slug) {
-  //   url = `${result}.html`;
-  // } else {
-  //   url = `${document.slug.toString()}.html`;
-  // }
+  var url = "";
+  var name: any = document.name.toLowerCase();
+  var string: any = name.toString();;
+  let result: any = string.replaceAll(" ", "-");
+  document.dm_directoryParents?.map((result: any, i: Number) => {
+    if (i > 0) {
+      url += result.slug + "/"
+    }
+  })
+  if (!document.slug) {
+    url += `${result}.html`;
+  } else {
+    url += `${document.slug.toString()}.html`;
+  }
 
-  return document.id + ".html";
+  // return `${document.id}.html`;
+
+  return url;
 };
 /**
  * Defines a list of paths which will redirect to the path created by getPath.
@@ -226,15 +233,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${document.c_meta_description ? document.c_meta_description : `Find the ${document.name} Timber Store in ${document.address.city}. We stock high-quality, robust products at competitive rates.`}`,
         },
       },
-      /// twitter tag
-
-
-
-
-
-
     ],
-
   };
 };
 type ExternalApiData = TemplateProps & { externalApiData: nearByLocation };
@@ -294,6 +293,7 @@ const Location: Template<ExternalApiRenderData> = ({
     c_faqs
 
   } = document;
+  
 
   let templateData = { document: document, __meta: __meta };
   let hoursSchema = [];

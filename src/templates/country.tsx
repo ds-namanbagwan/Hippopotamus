@@ -213,6 +213,10 @@ const country: Template<TemplateRenderProps> = ({
     dm_directoryParents,
     dm_directoryChildren
   } = document;
+  // console.log(document.slug,"1");
+  // console.log(dm_directoryChildren,"2")
+  // console.log(dm_directoryChildren.dm_directoryChildren,"63")
+  // console.log(dm_directoryChildren,"3")
   const childrenDivs = dm_directoryChildren ? dm_directoryChildren.map((entity: any) => {
     let detlslug;
 
@@ -230,6 +234,8 @@ const country: Template<TemplateRenderProps> = ({
           } else {
             detlslug1 = `${res.slug.toString()}.html`;
           }
+          //console.log(detlslug1,"detlslug1")
+          
 
 
           res.dm_directoryChildren ? res.dm_directoryChildren.map((detl: any) => {
@@ -239,7 +245,9 @@ const country: Template<TemplateRenderProps> = ({
               let slug = slugString;
               detlslug1 = `${slug}.html`;
             } else {
-              detlslug1 = `${detl.slug.toString()}.html`;
+              // detlslug1 = `${detl.slug.toString()}.html`;
+              detlslug1=slug+"/"+entity.slug+"/"+res.slug+"/"+detl.slug.toString()+".html"
+             // console.log(detlslug1,"1234554")
             }
 
             detlslug = detlslug1;

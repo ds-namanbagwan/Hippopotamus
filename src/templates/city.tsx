@@ -253,20 +253,22 @@ const City: Template<TemplateRenderProps> = ({
     }
     // let key: any = Object.keys(entity.hours)[0];
     var url = "";
-    var name: any = entity.name.toLowerCase();
+    var name: any = "/" + document.dm_directoryParents[1].slug + "/" + dm_directoryParents[2].slug + "/" + document.slug + "/" + entity.id;
+    // console.log(name,'namenamenamenamenamenamename')
     var region: any = entity.address.region.toLowerCase();
     var initialregion: any = region.toString();
     var finalregion: any = initialregion.replaceAll(" ", "-");
     var city: any = entity.address.city.toLowerCase();
     var initialrcity: any = city.toString();
     var finalcity: any = initialrcity.replaceAll(" ", "-");
-    var string: any = name.toString();;
+    var string: any = name.toString();
     let result: any = string.replaceAll(" ", "-");
-    if (!entity.slug) {
-      url = `/${entity.id}-${result}.html`;
+    if (entity.slug) {
+      url = `${result}.html`;
     } else {
       url = `/${entity.slug.toString()}.html`;
     }
+    console.log(url,"223145772")
 
 
 

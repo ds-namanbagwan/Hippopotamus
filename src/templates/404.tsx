@@ -67,24 +67,24 @@ const FourOhFour: Template<TemplateRenderProps> = ({
     <>
       {/* <PageLayout global={_site}> */}
       <Header1 _site={_site} />
-        <div className="content-list">
-          <div className="container">
-            <div className="sec-title text-center">
-              <h1 className="" style={{ textAlign: "center" }}>
-                {StaticData.PagenotFound}
-              </h1>
-              <p>{StaticData.cantfind_page}.</p>
-              <p>{StaticData.Youcouldtry}</p>
-              <div className="button-bx max-w-[45rem] flex !mt-[5%] !mb-[5%] !ml-[25%]">
-                <a className="btn" href="javascript:history.back()">{StaticData.Previuspage} &gt;</a>
-                <a className="btn" href="/">{StaticData.homePage} &gt;</a>
-              </div>
+      <div className="content-list">
+        <div className="container">
+          <div className="sec-title text-center">
+            <h1 className="" style={{ textAlign: "center" }}>
+              {StaticData.PagenotFound}
+            </h1>
+            <p>{StaticData.cantfind_page}.</p>
+            <p>{StaticData.Youcouldtry}</p>
+            <div className="button-bx max-w-[45rem] flex !mt-[5%] !mb-[5%] !ml-[25%]">
+              <a className="btn" href="javascript:history.back()">{StaticData.Previuspage} &gt;</a>
+              <a className="btn" href="/">{StaticData.homePage} &gt;</a>
             </div>
-
-
           </div>
+
+
         </div>
-        <Footer1 _site={_site} />
+      </div>
+      <Footer1 _site={_site} />
     </>
   );
 };
