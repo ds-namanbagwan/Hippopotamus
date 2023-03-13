@@ -476,18 +476,23 @@ function UnwrappedGoogleMaps({
 
   function Infowindow(i: number, result: any): void {
     info = true;
-    var url = "";
-    var name: any = result.rawData.name.toLowerCase();
-    var string1: any = name.toString();
-    let removeSpecialCharacters = string1.replace(
-      /[&\/\\#^+()$~%.'":*?<>{}!@]/g,
-      "");
-    let results: any = removeSpecialCharacters.replaceAll(" ", "-");
-    if (!result.rawData.slug) {
-      url = `${result.id}-${results}.html`;
-    } else {
-      url = `${result.rawData.slug.toString()}.html`;
-    }
+   let url = "";
+  var name: any = result.rawData.name?.toLowerCase();
+  var country: any = result.rawData.address.countryCode?.toLowerCase();
+  var region: any = result.rawData.address.region?.toLowerCase();
+  var initialregion: any = region.toString();
+  var finalregion: any = initialregion.replaceAll(" ", "-","^");
+  var city: any = result.rawData.address.city?.toLowerCase();
+  var initialrcity: any = city.toString();
+  var finalcity: any = initialrcity.replaceAll(" ", "-");
+  var strings: any = name.toString();
+  let result1: any = strings.replaceAll(" ", "-");
+  let name1:any=country+"/"+finalregion+"/"+finalcity+"/"+result.rawData.slug+".html";
+ if (!result.rawData.slug) {
+   url= `/${result.rawData.id}-${result1}.html`;
+ } else {
+   url= `/${name1}`;
+ }
 
     const MarkerContent = (
       <>
@@ -497,7 +502,7 @@ function UnwrappedGoogleMaps({
             {/* <div className="icon"> <img className=" " src={mapimage} width="20" height="20"
         alt="" /></div> */}
             <h2>
-              <a className="inline-block notHighlight" href={`${result.rawData.slug}.html`}>
+              <a className="inline-block notHighlight" href={url}>
                 {result.rawData.name}
               </a>
             </h2>

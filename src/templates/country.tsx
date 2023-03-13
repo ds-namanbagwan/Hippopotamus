@@ -263,22 +263,7 @@ const country: Template<TemplateRenderProps> = ({
       }
     }
 
-    // if (typeof entity.dm_directoryChildren != "undefined") {
-    //   if (entity.dm_directoryChildrenCount == 1) {
-    //     entity.dm_directoryChildren.map((res: any) => {
-    //       res.dm_directoryChildren.map((detl: any) => {
-    //         var name: any = detl.name.toLowerCase();
-    //         var string: any = name.toString();
-    //         let result: any = string.replaceAll(" ", "-");
-    //         detlslug = result + ".html";
-    //         // console.log(detlslug, "detlslug");
-    //       });
-    //     });
-    //   } else {
-    //     detlslug = "/" + slug + "/" + entity.slug + ".html";
-    //     // {console.log(detlslug,"lower")}
-    //   }
-    // }
+    
 
     return (
       <li className=" storelocation-category">
